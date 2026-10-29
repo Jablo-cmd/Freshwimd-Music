@@ -18,11 +18,6 @@ export const site = {
   },
   /** Only add profiles that genuinely exist: { label: "Instagram", href: "https://…" } */
   socials: [] as { label: string; href: string }[],
-  /** Equipment retail partner. `url` stays empty until the partner's official link is confirmed. */
-  partner: {
-    name: "Downtown Music Hub",
-    url: "",
-  },
 } as const;
 
 export const fullAddress = `${site.address.street}, ${site.address.suburb}, ${site.address.city}, ${site.address.postalCode}`;

@@ -42,9 +42,8 @@ after the visitor presses play; starting one stops the others. For `platform: "h
 `category` must be one of the eight categories in `content/types.ts`. `contribution` is displayed only when
 `contributionConfirmed: true`. Projects can link to an artist via `artistId`.
 
-## Recommended equipment (`content/equipment.ts`) and the partner link
-Add only real products: real name, permitted image, real Downtown Music Hub product URL. No prices or stock status
-are displayed. Set the partner's official website in `content/site.ts → partner.url` to show a "Visit" button.
+## Recommended equipment (`content/equipment.ts`)
+Add only real products: real name, permitted image and real product-page URL. No prices or stock status are displayed.
 
 ## Services and lessons
 `content/services.ts` / `content/lessons.ts`. Set `confirmed: false` on any service item that is not yet confirmed

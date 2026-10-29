@@ -89,9 +89,9 @@ export interface EquipmentProduct {
   name: string;
   brand?: string;
   category: string;
-  /** Image supplied under the Downtown Music Hub partnership */
+  /** A permitted product image */
   image: string;
-  /** Link to the product page on the partner's website */
+  /** Link to the product page */
   url: string;
   note?: string;
   published: boolean;

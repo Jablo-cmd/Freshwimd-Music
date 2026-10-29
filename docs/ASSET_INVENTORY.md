@@ -31,6 +31,6 @@ photography or have licensing confirmed before launch**.
 ## Missing assets still needed
 - Original photography of the live room, keyboards/instruments and any recording booth.
 - Artist profile + cover photographs, and project artwork (none in the repo).
-- Permitted product images and product-page URLs from Downtown Music Hub.
+- Permitted product images and product-page URLs, if you want to list specific recommended products.
 - A vector/transparent logo (the supplied PNG has a baked-in black background; a transparent emblem was derived from it).
 - Confirmation of the person pictured in the studio photographs and permission to feature them.

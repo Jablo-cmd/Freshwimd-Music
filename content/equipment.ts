@@ -13,7 +13,7 @@ export const equipmentCategories = [
 ];
 
 /**
- * Curated products from the retail partner. Add ONLY genuine products with their real name,
+ * Curated product recommendations. Add ONLY genuine products with their real name,
  * a permitted image and the real product-page URL. No prices or availability are shown.
  */
 export const equipmentProducts: EquipmentProduct[] = [];

@@ -2,45 +2,38 @@ import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { pageMetadata } from "@/lib/seo";
 import { equipmentCategories, equipmentProducts } from "@/content/equipment";
-import { site } from "@/content/site";
 import { PageHero } from "@/components/site/page-hero";
 import { Section, SectionHeading } from "@/components/site/section";
 import { EmptyState } from "@/components/site/empty-state";
 import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { CtaBand } from "@/components/site/cta-band";
-import { buttonVariants } from "@/components/ui/button";
 
 export const metadata = pageMetadata({
-  title: "Recommended Music Equipment — with Downtown Music Hub",
+  title: "Recommended Music Equipment — Keyboards, Monitors, Microphones and Interfaces",
   description:
-    "Fresh Wind Music's curated equipment recommendations — keyboards, digital pianos, MIDI controllers, monitors, headphones, microphones and audio interfaces — with retail partner Downtown Music Hub.",
+    "Equipment recommended by Fresh Wind Music in Johannesburg: keyboards, digital pianos, MIDI controllers, studio monitors, headphones, microphones and audio interfaces for artists, producers and students.",
   path: "/recommended-equipment",
 });
 
 export default function EquipmentPage() {
   const products = equipmentProducts.filter((p) => p.published);
-  const partnerUrl = site.partner.url;
   return (
     <>
       <PageHero
         eyebrow="Recommended equipment"
         title="The right tools make better music."
-        text={`A curated selection of equipment we recommend to artists, producers and students, in partnership with ${site.partner.name}.`}
+        text="A curated selection of equipment we recommend to artists, producers and students — and honest advice on what suits your music, your space and your stage of learning."
         image="outboardRack"
       >
-        {partnerUrl ? (
-          <a href={partnerUrl} target="_blank" rel="noopener noreferrer" className={buttonVariants({ size: "lg" })}>Visit {site.partner.name} <ExternalLink aria-hidden="true" /><span className="sr-only">(opens in a new tab)</span></a>
-        ) : (
-          <WhatsAppButton topic="equipment" size="lg">Ask for advice</WhatsAppButton>
-        )}
+        <WhatsAppButton topic="equipment" size="lg">Ask for advice</WhatsAppButton>
       </PageHero>
 
       <Section>
         <div className="grid gap-12 lg:grid-cols-2">
-          <SectionHeading eyebrow="Our equipment partner" title={site.partner.name} />
+          <SectionHeading eyebrow="How we recommend" title="Advice first, gear second." />
           <div className="prose-fw">
-            <p>{site.partner.name} is Fresh Wind Music&apos;s equipment retail partner. This page is a curated showcase of recommendations — not a shop.</p>
-            <p>Fresh Wind Music does not own, stock or sell the equipment shown here. Product details, prices and availability are managed by {site.partner.name}, and any purchase is made directly with them.</p>
+            <p>This page is a curated guide to the kinds of equipment we recommend — not a shop. The right keyboard, interface or monitors depend on what you are making, where you are making it and how far along you are.</p>
+            <p>Fresh Wind Music does not sell or stock equipment, and no prices or availability are shown here. Message us and we will point you in the right direction.</p>
           </div>
         </div>
       </Section>
@@ -62,7 +55,7 @@ export default function EquipmentPage() {
         <div className="mt-12">
           {products.length === 0 ? (
             <EmptyState title="Product recommendations coming soon" action={<WhatsAppButton topic="equipment" variant="outline">Ask for advice</WhatsAppButton>}>
-              Individual products, with their images and links to {site.partner.name}, will be added here. In the meantime, message us and we will point you to the right equipment for your needs.
+              Individual products, with their images and links, will be added here. In the meantime, message us and we will point you to the right equipment for your needs.
             </EmptyState>
           ) : (
             <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -73,7 +66,7 @@ export default function EquipmentPage() {
                     <p className="text-xs uppercase tracking-[0.14em] text-amber">{p.category}</p>
                     <h3 className="mt-2 font-medium">{p.name}</h3>
                     {p.note && <p className="mt-2 text-sm text-muted">{p.note}</p>}
-                    <a href={p.url} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm text-amber hover:underline">View on {site.partner.name} <ExternalLink className="size-3.5" aria-hidden="true" /><span className="sr-only">(opens in a new tab)</span></a>
+                    <a href={p.url} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm text-amber hover:underline">View product <ExternalLink className="size-3.5" aria-hidden="true" /><span className="sr-only">(opens in a new tab)</span></a>
                   </div>
                 </li>
               ))}

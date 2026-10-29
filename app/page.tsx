@@ -170,8 +170,8 @@ export default function HomePage() {
       <Section>
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
           <Reveal>
-            <SectionHeading eyebrow="Recommended equipment" title="Gear we'd point you to." text={`Fresh Wind Music has partnered with ${site.partner.name}, our equipment retail partner, to share a curated selection of keyboards, interfaces, monitors, microphones and more.`} />
-            <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted">Fresh Wind Music does not sell or stock this equipment — products are purchased directly from {site.partner.name}.</p>
+            <SectionHeading eyebrow="Recommended equipment" title="Gear we'd point you to." text="A curated guide to the keyboards, interfaces, monitors, microphones and more that we recommend to artists, producers and students." />
+            <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted">Fresh Wind Music does not sell or stock equipment — message us for honest advice on what suits you.</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/recommended-equipment" className={buttonVariants({ size: "lg" })}>View recommendations</Link>
               <WhatsAppButton topic="equipment" variant="outline" size="lg">Ask for advice</WhatsAppButton>
