@@ -1,0 +1,4 @@
+/** Renders structured data. Content is generated from trusted site config, never from user input. */
+export function JsonLd({ data }: { data: Record<string, unknown> }) {
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, "\\u003c") }} />;
+}

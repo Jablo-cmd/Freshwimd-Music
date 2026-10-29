@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #101216;
+  --color-ink-deep: #0b0c0f;
+  --color-surface: #24272d;
+  --color-surface-soft: #1a1d22;
+  --color-line: #343840;
+  --color-line-soft: #272a31;
+  --color-amber: #d9a45b;
+  --color-amber-soft: #e6bb82;
+  --color-cream: #f4f0e8;
+  --color-muted: #a1a4aa;
+  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  background: var(--color-ink);
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-cream);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-amber);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-[0.72rem] font-medium uppercase tracking-[0.28em] text-amber;
+  }
+  .display {
+    font-family: var(--font-display);
+    @apply font-medium leading-[1.04] tracking-tight text-cream;
+  }
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10;
+  }
+  .prose-fw p { @apply text-[1.02rem] leading-relaxed text-muted; }
+  .prose-fw p + p { @apply mt-4; }
+}
+
+@keyframes sheet-in { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes sheet-out { from { transform: translateX(0); } to { transform: translateX(100%); } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
+.sheet-panel[data-state="open"] { animation: sheet-in 0.32s cubic-bezier(0.22, 1, 0.36, 1); }
+.sheet-panel[data-state="closed"] { animation: sheet-out 0.22s ease-in; }
+.sheet-overlay[data-state="open"] { animation: fade-in 0.25s ease-out; }
+.sheet-overlay[data-state="closed"] { animation: fade-out 0.2s ease-in; }
