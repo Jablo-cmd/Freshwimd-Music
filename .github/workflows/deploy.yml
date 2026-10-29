@@ -1,0 +1,52 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  # Address the site is served from. Canonical URLs, sitemap and structured data use it.
+  # Switch to https://freshwindmusic.co.za by setting a repository variable SITE_URL when that domain is pointed here.
+  SITE_URL: ${{ vars.SITE_URL || 'https://freshwindmusic.aurisnexus.co.za' }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck && npm run lint
+      - name: Build static site
+        run: NEXT_PUBLIC_SITE_URL="$SITE_URL" npm run build:static
+      - name: Pages files (custom domain, no Jekyll)
+        run: |
+          touch out/.nojekyll
+          echo "${SITE_URL#https://}" > out/CNAME
+          rm -f out/.htaccess
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

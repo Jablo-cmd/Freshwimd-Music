@@ -31,6 +31,16 @@ scripts/             prepare-images.py (derives web crops from original photogra
 Contact details are single-sourced in `content/site.ts` (email intentionally `info@freshwindmusic.coza`, as supplied).
 WhatsApp prefilled messages live in `lib/whatsapp.ts`.
 
+## Deploy to GitHub Pages (current setup) — freshwindmusic.aurisnexus.co.za
+`.github/workflows/deploy.yml` builds the static export and publishes it on every push to `main`.
+One-time setup:
+1. Repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+2. Same page → **Custom domain**: `freshwindmusic.aurisnexus.co.za`. Tick **Enforce HTTPS** once the certificate is issued.
+3. DNS for `aurisnexus.co.za`: add `CNAME  freshwindmusic  →  jablo-cmd.github.io` (no trailing path; wait for propagation).
+4. Merge to `main` (or run the workflow manually from the **Actions** tab).
+Canonical URLs use `https://freshwindmusic.aurisnexus.co.za`. To move to `freshwindmusic.co.za` later, set the repository
+variable `SITE_URL` and the Pages custom domain.
+
 ## Deploy to shared hosting (cPanel / FTP) — static export
 The whole site is static, so it runs on ordinary web hosting with no Node.js:
 ```bash
