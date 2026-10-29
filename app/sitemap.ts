@@ -3,6 +3,8 @@ import { site, mainNav } from "@/content/site";
 import { services } from "@/content/services";
 import { artists, projects } from "@/content";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const entry = (path: string, priority: number): MetadataRoute.Sitemap[number] => ({ url: `${site.url}${path === "/" ? "" : path}`, lastModified: now, changeFrequency: "monthly", priority });

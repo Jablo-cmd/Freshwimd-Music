@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "build:static": "STATIC_EXPORT=1 next build && cp deploy/.htaccess out/.htaccess",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
   },

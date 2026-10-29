@@ -51,7 +51,7 @@ are displayed. Set the partner's official website in `content/site.ts → partne
 as available — it is hidden from the public site until set back to `true`.
 
 ## Previewing layouts
-`FWM_SAMPLE_CONTENT=1 npm run dev` loads clearly-labelled SAMPLE records (`content/sample.ts`, `public/sample/`)
+`FWM_SAMPLE_CONTENT=1 npm run dev` loads clearly-labelled SAMPLE records (`content/sample.ts`)
 so every layout can be previewed. Never set this in production.
 
 ## Supabase

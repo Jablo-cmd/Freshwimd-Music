@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ExternalLink } from "lucide-react";
 import { pageMetadata } from "@/lib/seo";
+import { staticSlugs } from "@/lib/utils";
 import { getArtist, getProject, projects } from "@/content";
 import { Section } from "@/components/site/section";
 import { Badge } from "@/components/ui/badge";
@@ -13,7 +14,7 @@ import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { CtaBand } from "@/components/site/cta-band";
 
 export const dynamicParams = false;
-export const generateStaticParams = () => projects.map((p) => ({ slug: p.slug }));
+export const generateStaticParams = () => staticSlugs(projects.map((p) => p.slug));
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const p = getProject((await params).slug);

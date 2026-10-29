@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ExternalLink } from "lucide-react";
 import { pageMetadata } from "@/lib/seo";
+import { staticSlugs } from "@/lib/utils";
 import { artists, getArtist, getArtistTracks, projects } from "@/content";
 import { relationshipLabels } from "@/content/types";
 import { Badge } from "@/components/ui/badge";
@@ -13,7 +14,7 @@ import { ProjectCard } from "@/components/site/project-card";
 import { CtaBand } from "@/components/site/cta-band";
 
 export const dynamicParams = false;
-export const generateStaticParams = () => artists.map((a) => ({ slug: a.slug }));
+export const generateStaticParams = () => staticSlugs(artists.map((a) => a.slug));
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const a = getArtist((await params).slug);

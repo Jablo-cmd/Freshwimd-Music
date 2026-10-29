@@ -31,7 +31,17 @@ scripts/             prepare-images.py (derives web crops from original photogra
 Contact details are single-sourced in `content/site.ts` (email intentionally `info@freshwindmusic.coza`, as supplied).
 WhatsApp prefilled messages live in `lib/whatsapp.ts`.
 
-## Deploy to freshwindmusic.co.za (Vercel recommended; not deployed yet)
+## Deploy to shared hosting (cPanel / FTP) — static export
+The whole site is static, so it runs on ordinary web hosting with no Node.js:
+```bash
+NEXT_PUBLIC_SITE_URL=https://freshwindmusic.co.za npm run build:static   # writes out/ (+ .htaccess)
+```
+Upload the **contents** of `out/` (including the hidden `.htaccess`) to the domain's web root (`public_html`), or
+unzip a prebuilt `freshwindmusic-site.zip` there. `deploy/.htaccess` forces HTTPS (install the SSL certificate first),
+redirects www to the apex domain and sets caching/security headers. Re-run the build and re-upload whenever content changes.
+Static hosting skips Next's runtime image optimisation; images are served as the optimised crops in `public/images/site/`.
+
+## Deploy to freshwindmusic.co.za (Vercel alternative)
 1. Import the GitHub repo into Vercel (framework preset: Next.js, defaults are correct).
 2. Set `NEXT_PUBLIC_SITE_URL=https://freshwindmusic.co.za`. Do **not** set `FWM_SAMPLE_CONTENT`.
 3. Project → Domains: add `freshwindmusic.co.za` and `www.freshwindmusic.co.za` (redirect www → apex).
