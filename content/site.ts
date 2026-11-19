@@ -7,7 +7,7 @@ export const site = {
     "Fresh Wind Music is a Johannesburg-based music production, audio engineering, songwriting, artist development and music education business.",
   phone: { display: "063 122 6552", href: "tel:+27631226552", e164: "+27631226552" },
   whatsappNumber: "27631226552",
-  email: "info@aurisnexus.co.za",
+  email: "freshwindmusic@aurisnexus.co.za",
   address: {
     street: "60 Goud St",
     suburb: "City and Suburban",
