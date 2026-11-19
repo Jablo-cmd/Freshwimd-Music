@@ -10,8 +10,8 @@ const song = (id: string, artistId: string, title: string, extra: Partial<Track>
 });
 
 export const tracks: Track[] = [
-  // Official catalogue page — replace with the direct Uzuko track / video link once confirmed (docs/ARTIST_RESEARCH.md).
-  song("putuma-tiso-uzuko", "putuma-tiso", "Uzuko", { platform: "external", listenUrl: "https://www.deezer.com/en/artist/8875086" }),
+  // Official "Provided to YouTube" upload (Worship Encounter, ℗ 2019 Putuma Productions). Found via search; not opened from the build environment.
+  song("putuma-tiso-uzuko", "putuma-tiso", "Uzuko", { embedUrl: "https://www.youtube.com/watch?v=r3RBUyis6GE", listenUrl: "https://www.youtube.com/watch?v=r3RBUyis6GE" }),
   song("monde-mgquba-if-not-for-you", "monde-mgquba", "If Not for You", { embedUrl: "https://youtu.be/fKrQSv3ZEL0", listenUrl: "https://youtu.be/fKrQSv3ZEL0" }),
   song("exaltation-crew-you-are", "exaltation-crew", "You Are", { embedUrl: "https://youtu.be/oiNhJH04Pj0", listenUrl: "https://youtu.be/oiNhJH04Pj0" }),
   song("refilwe-tjatji-full-of-faith", "refilwe-tjatji", "Full of Faith (Live)", { embedUrl: "https://youtu.be/GJZEkhPYxds", listenUrl: "https://youtu.be/GJZEkhPYxds" }),

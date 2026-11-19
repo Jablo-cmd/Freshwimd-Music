@@ -21,10 +21,11 @@ least 1000 px wide), run `python3 scripts/prepare-images.py` (creates optimised 
 if the licence requires one) to the artist in `content/artists.ts`. Nothing else changes.
 
 ## Songs and listening links
+Policy: **YouTube first** — each song was searched on YouTube before any other platform was used. A search of YouTube for the other three songs (by artist + title) did **not** surface your supplied videos or any other upload, and searching by video ID returned nothing; those three links are therefore exactly as supplied and still need opening/confirming.
 
 | Artist | Song | Link on site | Status |
 |---|---|---|---|
-| Putuma Tiso | Uzuko | Deezer artist page `https://www.deezer.com/en/artist/8875086` ("Listen now" button) | **Direct recording link not verified.** Search results (Deezer, Amazon Music) list *Uzuko* as track 2 of *Worship Encounter* (Putuma Productions, 4 Oct 2019, ≈9:19; Amazon credits "feat. Takesure Zamar Ncube"). Apple Music also shows "Uzuko (Live)". No YouTube link was supplied and none was verified. Replace the link in `content/tracks.ts` with the confirmed track URL (a YouTube/Spotify link will then embed automatically). Two different Apple Music artist IDs appear in results for this name (391470069, 1576935856), so the correct profile must be confirmed. |
+| Putuma Tiso | Uzuko | `https://www.youtube.com/watch?v=r3RBUyis6GE` (embed + link) | **Found on YouTube by search** (YouTube-first): an official "Provided to YouTube" upload — "Uzuko · Putuma Tiso · Worship Encounter · ℗ 2019 Putuma Productions · Released 2019-10-04" (distributor: Catapult Reservatory, LLC). Matches artist, album and date, but the page itself was **not opened**, so title, availability and embeddability are unconfirmed. Earlier fallback was the Deezer artist page. Other Putuma Tiso videos surfaced (not used): Worship Medley `Y_2ViGDM1ws` / `zfF4WgwRBa0`, "Qamata" `bSqy4a5WZNs`, "Bow Down And Worship Him" `O4lfvcVGhik`, and the artist's channel `@putumaproductionstiso535`. Remaining notes from the earlier search: Search results (Deezer, Amazon Music) list *Uzuko* as track 2 of *Worship Encounter* (Putuma Productions, 4 Oct 2019, ≈9:19; Amazon credits "feat. Takesure Zamar Ncube"). Apple Music also shows "Uzuko (Live)". No YouTube link was supplied and none was verified. Two different Apple Music artist IDs appear in results for this name (391470069, 1576935856), so the correct profile must be confirmed. |
 | Monde Mgquba | If Not for You | `https://youtu.be/fKrQSv3ZEL0` (embed + link) | Supplied by the owner. **Not opened/verified** (title, channel and availability unconfirmed). |
 | Exaltation Crew | You Are | `https://youtu.be/oiNhJH04Pj0` (embed + link) | Supplied by the owner (Spring Worship **Volume 4**, Sweep Life Church, 2016). **Not opened/verified.** No independent source for this album was found. |
 | Refilwe Tjatji | Full of Faith (Live) | `https://youtu.be/GJZEkhPYxds` (embed + link) | Supplied by the owner. **Not opened/verified.** |
@@ -46,6 +47,6 @@ is downloaded or hosted. Ownership/permission to feature these artists has not b
 
 ## Verification still needed
 1. Open each YouTube link and confirm title, uploader, that it is the right recording, and that embedding is permitted.
-2. Find and confirm the direct Uzuko recording link; confirm which Putuma Tiso streaming profile is official.
+2. Open the Uzuko YouTube link (`r3RBUyis6GE`) and confirm it is the right, embeddable recording; confirm which Putuma Tiso streaming profile is official.
 3. Obtain authorised photographs for all four artists (and confirm permission to feature them).
 4. If profile pages are wanted later, supply/confirm biographies and release details with the artists.
