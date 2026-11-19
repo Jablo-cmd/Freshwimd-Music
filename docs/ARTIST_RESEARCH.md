@@ -11,7 +11,7 @@ from the build environment, so **no link or video was opened and checked in a br
 |---|---|---|
 | Putuma Tiso | `public/images/artists/putuma-tiso.jpg` (682×852, as supplied) | Supplied by the site owner (19 Nov 2026), who identified the subject. Photographer/credit **unknown** (no watermark or metadata). **Permission from the artist/photographer not confirmed.** |
 | Refilwe Tjatji | `public/images/artists/refilwe-tjatji.jpg` (853×1198, cropped) | Supplied by the site owner, who identified the subject. The original carried a photographer's logo (an "Am" camera mark, apparently *African Moments Photography*) in the bottom-left corner; **at the owner's instruction the image was cropped just above it** (removing the bottom 82 px, which trims only the fingertips). Original size 853×1280. **Permission from the photographer and the artist is not confirmed** — cropping a credit is only appropriate with the photographer's consent; if they ask for credit, add `photoCredit` and display it. |
-| Monde Mgquba | None — branded monogram shown | No photograph supplied or located. |
+| Monde Mgquba | `public/images/artists/monde-mgquba.jpg` (1254×1254, converted from WebP) | Supplied by the site owner, who states **they personally photographed it in 2019** and identified the subject. Not independently verified. (During review the image was queried because of possible AI-generation artefacts — merged hands/microphone stand, cable-less mic — and the owner confirmed it is their own photograph.) Subject's permission not confirmed. |
 | Exaltation Crew | None — monogram shown | No group photograph supplied or located. |
 
 No AI-generated or look-alike photographs were used. Identity of each subject rests on the owner's statement; it was not independently verified.
@@ -47,5 +47,5 @@ is downloaded or hosted. Ownership/permission to feature these artists has not b
 ## Verification still needed
 1. Open each YouTube link and confirm title, uploader, that it is the right recording, and that embedding is permitted.
 2. Open the Uzuko YouTube link (`r3RBUyis6GE`) and confirm it is the right, embeddable recording; confirm which Putuma Tiso streaming profile is official.
-3. Confirm permission to use the two supplied photographs (artist + photographer, esp. the cropped *African Moments Photography* image); obtain photographs for Monde Mgquba and Exaltation Crew; confirm permission to feature all four artists.
+3. Confirm permission to use the two supplied photographs (artist + photographer, esp. the cropped *African Moments Photography* image); obtain a photograph for Exaltation Crew; confirm permission to feature all four artists.
 4. If profile pages are wanted later, supply/confirm biographies and release details with the artists.
