@@ -6,7 +6,7 @@ const initials = (name: string) =>
   name.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]?.toUpperCase()).join("");
 
 interface Props {
-  artist: Pick<Artist, "name" | "profileImage" | "profileImageAlt">;
+  artist: Pick<Artist, "name" | "profileImage" | "profileImageAlt" | "profileImagePosition">;
   sizes: string;
   priority?: boolean;
   className?: string;
@@ -27,6 +27,7 @@ export function ArtistPortrait({ artist, sizes, priority, className, imageClassN
         sizes={sizes}
         priority={priority}
         className={cn("object-cover", imageClassName)}
+        style={artist.profileImagePosition ? { objectPosition: artist.profileImagePosition } : undefined}
       />
     );
   }

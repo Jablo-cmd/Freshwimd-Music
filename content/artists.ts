@@ -9,8 +9,8 @@ import type { Artist } from "./types";
  * Sources, licensing status and open verification items are recorded in docs/ARTIST_RESEARCH.md.
  */
 export const artists: Artist[] = [
-  { id: "putuma-tiso", name: "Putuma Tiso", slug: "putuma-tiso", featuredTrackId: "putuma-tiso-uzuko", featured: true, published: true },
+  { id: "putuma-tiso", name: "Putuma Tiso", slug: "putuma-tiso", profileImage: "/images/artists/putuma-tiso.jpg", profileImageAlt: "Putuma Tiso in a teal, gold and brown African-print dress", profileImagePosition: "50% 20%", featuredTrackId: "putuma-tiso-uzuko", featured: true, published: true },
   { id: "monde-mgquba", name: "Monde Mgquba", slug: "monde-mgquba", featuredTrackId: "monde-mgquba-if-not-for-you", featured: true, published: true },
   { id: "exaltation-crew", name: "Exaltation Crew", slug: "exaltation-crew", featuredTrackId: "exaltation-crew-you-are", featured: true, published: true },
-  { id: "refilwe-tjatji", name: "Refilwe Tjatji", slug: "refilwe-tjatji", featuredTrackId: "refilwe-tjatji-full-of-faith", featured: true, published: true },
+  { id: "refilwe-tjatji", name: "Refilwe Tjatji", slug: "refilwe-tjatji", profileImage: "/images/artists/refilwe-tjatji.jpg", profileImageAlt: "Refilwe Tjatji in a mustard-yellow coat", profileImagePosition: "50% 25%", featuredTrackId: "refilwe-tjatji-full-of-faith", featured: true, published: true },
 ];

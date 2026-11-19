@@ -23,6 +23,8 @@ export interface Artist {
    */
   profileImage?: string;
   profileImageAlt?: string;
+  /** CSS object-position for the card crop, e.g. "50% 20%" to keep faces in frame */
+  profileImagePosition?: string;
   /** e.g. "Photo: Artist name (used with permission)" — displayed beneath the photograph */
   photoCredit?: string;
   /** Albums, EPs and singles. Add only verified releases. */
