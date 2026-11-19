@@ -9,9 +9,9 @@ import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { CtaBand } from "@/components/site/cta-band";
 
 export const metadata = pageMetadata({
-  title: "Recommended Music Equipment — Keyboards, Monitors, Microphones and Interfaces",
+  title: "Recommended Music Equipment",
   description:
-    "Equipment recommended by Fresh Wind Music in Johannesburg: keyboards, digital pianos, MIDI controllers, studio monitors, headphones, microphones and audio interfaces for artists, producers and students.",
+    "Equipment recommended by Fresh Wind Music: keyboards, digital pianos, MIDI controllers, monitors, headphones, microphones and audio interfaces.",
   path: "/recommended-equipment",
 });
 

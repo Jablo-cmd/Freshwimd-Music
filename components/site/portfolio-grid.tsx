@@ -39,15 +39,15 @@ export function PortfolioGrid({ projects }: { projects: Project[] }) {
 
       <div className="mt-10" aria-live="polite">
         {shown.length === 0 ? (
-          <EmptyState title={projects.length === 0 ? "The portfolio is being curated" : "Nothing in this category yet"}>
+          <EmptyState as="h2" title={projects.length === 0 ? "The portfolio is being curated" : "Nothing in this category yet"}>
             {projects.length === 0
               ? "Selected productions, mixes and performances will appear here as they are confirmed and cleared for publication."
               : "There are no published projects in this category yet. Try another category."}
           </EmptyState>
         ) : (
-          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <><h2 className="sr-only">Projects</h2><ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {shown.map((p) => (<li key={p.id}><ProjectCard project={p} /></li>))}
-          </ul>
+          </ul></>
         )}
       </div>
     </div>

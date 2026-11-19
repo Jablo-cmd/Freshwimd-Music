@@ -8,7 +8,7 @@ import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { CtaBand } from "@/components/site/cta-band";
 
 export const metadata = pageMetadata({
-  title: "Portfolio — Music Production, Mixing and Mastering Projects",
+  title: "Portfolio: Production, Mixing & Mastering",
   description:
     "Selected music production, mixing and mastering, songwriting, vocal production and performance projects from Fresh Wind Music, Johannesburg.",
   path: "/portfolio",

@@ -11,9 +11,9 @@ import { CtaBand } from "@/components/site/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
 
 export const metadata = pageMetadata({
-  title: "Music Lessons Johannesburg — Piano, Keyboard and Music Production Lessons",
+  title: "Music Lessons in Johannesburg",
   description:
-    "Piano lessons, keyboard lessons, music theory and music production lessons in Johannesburg for beginners and developing musicians. Lessons are arranged by enquiry.",
+    "Piano, keyboard, music theory and music production lessons in Johannesburg for beginners and developing musicians. Arranged by enquiry.",
   path: "/music-lessons",
 });
 
@@ -56,7 +56,7 @@ export default function LessonsPage() {
       </Section>
 
       <Section>
-        <div className="grid gap-14 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-14 lg:grid-cols-2">
           <div>
             <SectionHeading eyebrow="How lessons work" title="Simple to start" />
             <ol className="mt-10 space-y-6">

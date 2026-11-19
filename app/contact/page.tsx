@@ -9,11 +9,12 @@ import { EnquiryForm } from "@/components/site/enquiry-form";
 import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { buttonVariants } from "@/components/ui/button";
 import { JsonLd } from "@/components/site/json-ld";
+import { MapEmbed } from "@/components/site/map-embed";
 
 export const metadata = pageMetadata({
-  title: "Contact — Music Production & Lessons in Johannesburg",
+  title: "Contact & WhatsApp Enquiries",
   description:
-    "Contact Fresh Wind Music at 60 Goud St, City and Suburban, Johannesburg. WhatsApp 063 122 6552 for music production, mixing and mastering, songwriting, vocal coaching and lessons.",
+    "Contact Fresh Wind Music, 60 Goud St, City and Suburban, Johannesburg. WhatsApp 063 122 6552 for production, mixing, lessons and more.",
   path: "/contact",
 });
 
@@ -66,7 +67,7 @@ export default function ContactPage() {
       </Section>
 
       <section aria-label="Map" className="border-t border-line-soft">
-        <iframe src={mapsEmbed} title={`Map showing ${fullAddress}`} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="block h-[380px] w-full border-0 grayscale invert-[0.92] contrast-[0.9]" />
+        <MapEmbed src={mapsEmbed} title={`Map showing ${fullAddress}`} directionsHref={mapsLink} />
       </section>
     </>
   );

@@ -28,7 +28,7 @@ lib/                 SEO metadata, WhatsApp links, embed validation, structured 
 docs/                ASSET_INVENTORY.md, CONTENT_GUIDE.md
 scripts/             prepare-images.py (derives web crops from original photographs)
 ```
-Contact details are single-sourced in `content/site.ts` (email intentionally `info@freshwindmusic.coza`, as supplied).
+Contact details are single-sourced in `content/site.ts` (email: `info@aurisnexus.co.za`).
 WhatsApp prefilled messages live in `lib/whatsapp.ts`.
 
 ## Deploy to GitHub Pages (current setup) — freshwindmusic.aurisnexus.co.za

@@ -13,13 +13,13 @@ import { Sheet, SheetClose, SheetContent, SheetDescription, SheetTitle, SheetTri
 
 function Brand() {
   return (
-    <Link href="/" className="flex shrink-0 items-center gap-3" aria-label={`${site.name} — home`}>
+    <Link href="/" className="flex shrink-0 items-center gap-3">
       <Image src="/images/site/logo-mark.png" alt="" width={56} height={39} className="h-9 w-auto" priority />
       <span className="whitespace-nowrap leading-none">
         <span className="block font-[family-name:var(--font-display)] text-xl font-semibold tracking-[0.12em] text-cream">
           FRESH <span className="text-amber">WIND</span>
-        </span>
-        <span className="mt-1 block text-[0.6rem] uppercase tracking-[0.5em] text-muted">Music</span>
+        </span>{" "}
+        <span className="mt-1 block text-[0.6rem] uppercase tracking-[0.5em] text-muted">Music<span className="sr-only"> — home</span></span>
       </span>
     </Link>
   );

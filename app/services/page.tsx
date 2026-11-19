@@ -12,9 +12,9 @@ import { Reveal } from "@/components/site/reveal";
 import { buttonVariants } from "@/components/ui/button";
 
 export const metadata = pageMetadata({
-  title: "Music Production, Mixing & Mastering, Songwriting and Vocal Coaching Services — Johannesburg",
+  title: "Music Services in Johannesburg",
   description:
-    "The full Fresh Wind Music services catalogue in Johannesburg: music production, recording, mixing and mastering, songwriting, vocal coaching, artist development and music lessons.",
+    "Music production, recording, mixing and mastering, songwriting, vocal coaching, artist development and lessons in Johannesburg. Enquire on WhatsApp.",
   path: "/services",
 });
 
@@ -24,7 +24,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Everything your music needs, in one place."
-        text="Music production, audio engineering, songwriting, vocal development, artist development and music education — from a Johannesburg-based team."
+        text="Music production, audio engineering, songwriting, vocal development, artist development and music education — based in Johannesburg."
         image="burgundyControlRoom"
       >
         <WhatsAppButton size="lg">Enquire on WhatsApp</WhatsAppButton>
@@ -38,7 +38,7 @@ export default function ServicesPage() {
 
       {services.map((s, i) => (
         <Section key={s.slug} id={s.slug} tone={i % 2 ? "soft" : "ink"} className="py-16 sm:py-24">
-          <div className={`grid items-start gap-12 lg:grid-cols-2 ${i % 2 ? "lg:[&>*:first-child]:order-2" : ""}`}>
+          <div className={`grid grid-cols-1 items-start gap-12 lg:grid-cols-2 ${i % 2 ? "lg:[&>*:first-child]:order-2" : ""}`}>
             <Reveal className="relative aspect-[4/3] overflow-hidden rounded-sm border border-line lg:sticky lg:top-44">
               <SiteImage name={s.image} sizes="(min-width:1024px) 45vw, 100vw" />
             </Reveal>

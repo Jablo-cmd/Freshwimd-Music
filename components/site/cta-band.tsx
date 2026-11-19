@@ -6,7 +6,7 @@ export function CtaBand({ title = "Let's Create Something Worth Listening To.", 
   return (
     <section className="relative isolate overflow-hidden border-t border-line-soft">
       <div className="absolute inset-0 -z-10">
-        <SiteImage name="consoleWide" sizes="100vw" alt="" />
+        <SiteImage name="controlRoomSession" sizes="100vw" alt="" />
         <div className="absolute inset-0 bg-ink/90" />
       </div>
       <div className="container-x py-24 text-center sm:py-32">
