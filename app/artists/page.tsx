@@ -28,7 +28,7 @@ export default function ArtistsPage() {
       />
       <Section>
         {artists.length === 0 ? (
-          <EmptyState title="Artist profiles are being added" action={<WhatsAppButton topic="featured" variant="outline">Discuss your project</WhatsAppButton>}>
+          <EmptyState as="h2" title="Artist profiles are being added" action={<WhatsAppButton topic="featured" variant="outline">Discuss your project</WhatsAppButton>}>
             Each artist is published only with their permission and a confirmed description of Fresh Wind Music&apos;s involvement. Profiles, releases and credits will appear here shortly.
           </EmptyState>
         ) : (

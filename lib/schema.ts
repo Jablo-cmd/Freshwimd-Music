@@ -28,7 +28,7 @@ export function localBusinessSchema() {
       name: "Fresh Wind Music services",
       itemListElement: services.map((s) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: s.title, url: `${site.url}${s.href}` } })),
     },
-    sameAs: site.socials.map((s) => s.href),
+    ...(site.socials.length > 0 && { sameAs: site.socials.map((s) => s.href) }),
     contactPoint: [{ "@type": "ContactPoint", telephone: site.phone.e164, email: site.email, contactType: "customer service", areaServed: "ZA" }],
   };
 }

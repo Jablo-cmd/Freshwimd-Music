@@ -18,9 +18,9 @@ import { CtaBand } from "@/components/site/cta-band";
 import { EmptyState } from "@/components/site/empty-state";
 
 export const metadata = pageMetadata({
-  title: "Fresh Wind Music | Music Production, Mixing & Mastering and Music Lessons in Johannesburg",
+  title: "Fresh Wind Music | Music Production & Lessons Johannesburg",
   description:
-    "Johannesburg music production, audio mixing and mastering, songwriting, vocal coaching and piano, keyboard and music production lessons. Fresh Wind Music — where music finds its voice.",
+    "Johannesburg music production, mixing and mastering, songwriting, vocal coaching and piano, keyboard and music production lessons.",
   path: "/",
 });
 

@@ -8,7 +8,7 @@ import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { CtaBand } from "@/components/site/cta-band";
 
 export const metadata = pageMetadata({
-  title: "Studio & Equipment — Music Studio Johannesburg",
+  title: "Studio & Equipment in Johannesburg",
   description:
     "Inside the Fresh Wind Music control room in Johannesburg: large-format mixing console, outboard processing and monitoring for recording, mixing and mastering.",
   path: "/studio",
@@ -34,7 +34,7 @@ export default function StudioPage() {
         eyebrow="Studio & equipment"
         title="The room where the sound is shaped."
         text="A look inside the Fresh Wind Music control room — the console, processing and monitoring behind our production, recording, mixing and mastering work."
-        image="consoleWide"
+        image="controlRoomSession"
       >
         <WhatsAppButton topic="production" size="lg">Discuss Your Project</WhatsAppButton>
       </PageHero>

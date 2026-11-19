@@ -63,7 +63,7 @@ export const services: Service[] = [
     href: "/services/music-production",
     metaTitle: "Music Production Johannesburg",
     metaDescription:
-      "Music production in Johannesburg: full production, custom instrumentals, beats and arrangements for independent artists and commercial projects. Enquire on WhatsApp.",
+      "Music production in Johannesburg: full production, custom instrumentals, beats and arrangements for independent and commercial projects.",
   },
   {
     slug: "audio-engineering",
@@ -190,9 +190,9 @@ export const services: Service[] = [
     ),
     topic: "artistDevelopment",
     href: "/services/artist-development",
-    metaTitle: "Artist Development and Music Production Services South Africa",
+    metaTitle: "Artist Development Johannesburg",
     metaDescription:
-      "Artist development in Johannesburg: sound development, creative direction, repertoire and recording preparation for emerging and established South African artists.",
+      "Artist development in Johannesburg: sound development, creative direction, repertoire and recording preparation for emerging and established artists.",
   },
   {
     slug: "music-education",

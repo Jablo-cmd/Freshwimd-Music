@@ -49,4 +49,21 @@ og.paste(hero, (500, 0), mask)
 lg = logo.resize((560, 560)).crop((0, 0, 560, 560))
 og.paste(lg, (20, 35))
 og.save("public/og-image.jpg", quality=88)
-print("done")
+
+# ---- Responsive WebP variants + manifest (used by lib/image-loader.ts; static hosting has no image optimiser) ----
+import json, glob
+opt = f"{out}/opt"; os.makedirs(opt, exist_ok=True)
+for old in glob.glob(f"{opt}/*.webp"): os.remove(old)
+manifest = {}
+for path in sorted(glob.glob(f"{out}/*.jpg") + [f"{out}/logo-mark.png"]):
+    name = os.path.basename(path); stem = os.path.splitext(name)[0]
+    if stem in ("logo-full",): continue
+    im = Image.open(path); sw = im.width
+    ladder = [128, 256, 480] if stem == "logo-mark" else [480, 828, 1280, 1920]
+    widths = sorted({w for w in ladder if w < sw} | {sw})
+    for w in widths:
+        r = im if w == sw else im.resize((w, round(im.height * w / sw)), Image.LANCZOS)
+        r.save(f"{opt}/{stem}-{w}.webp", "WEBP", quality=58 if stem != "logo-mark" else 85, method=6)
+    manifest[f"/images/site/{name}"] = widths
+json.dump(manifest, open("lib/image-manifest.json", "w"), indent=1, sort_keys=True)
+print("done", sum(len(v) for v in manifest.values()), "webp files")
