@@ -1,4 +1,4 @@
-/** Confirmed business details. Keep these exactly as supplied — do not "correct" the email domain. */
+/** Confirmed business details. Keep these exactly as supplied. */
 export const site = {
   name: "Fresh Wind Music",
   tagline: "Where Music Finds Its Voice.",
@@ -7,7 +7,7 @@ export const site = {
     "Fresh Wind Music is a Johannesburg-based music production, audio engineering, songwriting, artist development and music education business.",
   phone: { display: "063 122 6552", href: "tel:+27631226552", e164: "+27631226552" },
   whatsappNumber: "27631226552",
-  email: "info@freshwindmusic.coza", // exactly as supplied (".coza")
+  email: "info@aurisnexus.co.za",
   address: {
     street: "60 Goud St",
     suburb: "City and Suburban",
