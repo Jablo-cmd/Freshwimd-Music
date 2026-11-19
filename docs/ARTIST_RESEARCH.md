@@ -7,18 +7,17 @@ from the build environment, so **no link or video was opened and checked in a br
 
 ## Photographs — status
 
-| Artist | Photograph on site | Licensing status |
+| Artist | Photograph on site | Source / licensing status |
 |---|---|---|
-| Putuma Tiso | **None — branded monogram shown** | No image with a clear licence was obtainable. Official/press images exist (artist profiles on streaming services, news features) but are copyrighted and no permission was available. |
-| Monde Mgquba | **None — monogram** | No authentic, licensed photograph located. |
-| Exaltation Crew | **None — monogram** | No group photograph located. |
-| Refilwe Tjatji | **None — monogram** | No authentic, licensed photograph located. |
+| Putuma Tiso | `public/images/artists/putuma-tiso.jpg` (682×852, as supplied) | Supplied by the site owner (19 Nov 2026), who identified the subject. Photographer/credit **unknown** (no watermark or metadata). **Permission from the artist/photographer not confirmed.** |
+| Refilwe Tjatji | `public/images/artists/refilwe-tjatji.jpg` (853×1198, cropped) | Supplied by the site owner, who identified the subject. The original carried a photographer's logo (an "Am" camera mark, apparently *African Moments Photography*) in the bottom-left corner; **at the owner's instruction the image was cropped just above it** (removing the bottom 82 px, which trims only the fingertips). Original size 853×1280. **Permission from the photographer and the artist is not confirmed** — cropping a credit is only appropriate with the photographer's consent; if they ask for credit, add `photoCredit` and display it. |
+| Monde Mgquba | `public/images/artists/monde-mgquba.jpg` (1254×1254, converted from WebP) | Supplied by the site owner, who states **they personally photographed it in 2019** and identified the subject. Not independently verified. (During review the image was queried because of possible AI-generation artefacts — merged hands/microphone stand, cable-less mic — and the owner confirmed it is their own photograph.) Subject's permission not confirmed. |
+| Exaltation Crew | None — monogram shown | No group photograph supplied or located. |
 
-No AI-generated or look-alike photographs were used. **To add a real photograph:** obtain it from the artist (or their label /
-official channels) with written permission, save the original as `public/images/artists/<slug>.jpg` (portrait, ~4:5, at
-least 1000 px wide), run `python3 scripts/prepare-images.py` (creates optimised WebP sizes), then add
-`profileImage: "/images/artists/<slug>.jpg"` and `profileImageAlt: "<Name> — portrait photograph"` (and `photoCredit`
-if the licence requires one) to the artist in `content/artists.ts`. Nothing else changes.
+No AI-generated or look-alike photographs were used. Identity of each subject rests on the owner's statement; it was not independently verified.
+**To add or replace a photograph:** save the authorised original as `public/images/artists/<slug>.jpg` (portrait, ~4:5, ≥ 1000 px wide ideally), run
+`python3 scripts/prepare-images.py` (creates optimised WebP sizes), then set `profileImage`, `profileImageAlt` and, if needed, `profileImagePosition` / `photoCredit`
+for the artist in `content/artists.ts`.
 
 ## Songs and listening links
 Policy: **YouTube first** — each song was searched on YouTube before any other platform was used. A search of YouTube for the other three songs (by artist + title) did **not** surface your supplied videos or any other upload, and searching by video ID returned nothing; those three links are therefore exactly as supplied and still need opening/confirming.
@@ -48,5 +47,5 @@ is downloaded or hosted. Ownership/permission to feature these artists has not b
 ## Verification still needed
 1. Open each YouTube link and confirm title, uploader, that it is the right recording, and that embedding is permitted.
 2. Open the Uzuko YouTube link (`r3RBUyis6GE`) and confirm it is the right, embeddable recording; confirm which Putuma Tiso streaming profile is official.
-3. Obtain authorised photographs for all four artists (and confirm permission to feature them).
+3. Confirm permission to use the two supplied photographs (artist + photographer, esp. the cropped *African Moments Photography* image); obtain a photograph for Exaltation Crew; confirm permission to feature all four artists.
 4. If profile pages are wanted later, supply/confirm biographies and release details with the artists.
