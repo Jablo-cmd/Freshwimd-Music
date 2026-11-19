@@ -65,5 +65,19 @@ for path in sorted(glob.glob(f"{out}/*.jpg") + [f"{out}/logo-mark.png"]):
         r = im if w == sw else im.resize((w, round(im.height * w / sw)), Image.LANCZOS)
         r.save(f"{opt}/{stem}-{w}.webp", "WEBP", quality=58 if stem != "logo-mark" else 85, method=6)
     manifest[f"/images/site/{name}"] = widths
+
+# Artist photographs: drop authorised originals into public/images/artists/ and re-run this script.
+art_dir = "public/images/artists"; art_opt = f"{art_dir}/opt"
+os.makedirs(art_dir, exist_ok=True)
+for old in glob.glob(f"{art_opt}/*.webp"): os.remove(old)
+for path in sorted(p for ext in ("jpg", "jpeg", "png", "webp") for p in glob.glob(f"{art_dir}/*.{ext}")):
+    os.makedirs(art_opt, exist_ok=True)
+    name = os.path.basename(path); stem = os.path.splitext(name)[0]
+    im = Image.open(path).convert("RGB"); sw = im.width
+    widths = sorted({w for w in [480, 828, 1280] if w < sw} | {min(sw, 1600)})
+    for w in widths:
+        r = im if w == sw else im.resize((w, round(im.height * w / sw)), Image.LANCZOS)
+        r.save(f"{art_opt}/{stem}-{w}.webp", "WEBP", quality=72, method=6)
+    manifest[f"/images/artists/{name}"] = widths
 json.dump(manifest, open("lib/image-manifest.json", "w"), indent=1, sort_keys=True)
 print("done", sum(len(v) for v in manifest.values()), "webp files")

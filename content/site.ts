@@ -28,7 +28,7 @@ export const mainNav = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "Portfolio", href: "/portfolio" },
-  { label: "Artists We've Worked With", href: "/artists" },
+  { label: "Artists & Music", href: "/artists" },
   { label: "Studio & Equipment", href: "/studio" },
   { label: "Music Lessons", href: "/music-lessons" },
   { label: "Recommended Equipment", href: "/recommended-equipment" },

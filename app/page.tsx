@@ -113,20 +113,20 @@ export default function HomePage() {
       {/* 5. Artists */}
       <Section tone="soft">
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <Reveal><SectionHeading eyebrow="Artists we've worked with" title="The people behind the music" /></Reveal>
-          <Link href="/artists" className={buttonVariants({ variant: "outline" })}>Browse all artists</Link>
+          <Reveal><SectionHeading eyebrow="Artists & Music" title="Gospel voices, worship you can hear" /></Reveal>
+          <Link href="/artists" className={buttonVariants({ variant: "outline" })}>Explore Artists & Music</Link>
         </div>
         <div className="mt-12">
           {artists.length ? (
             <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {artists.map((a) => {
                 const featured = tracks.find((t) => t.id === a.featuredTrackId) ?? getArtistTracks(a.id)[0];
-                return (<li key={a.id}><ArtistCard artist={a} featuredTitle={featured?.title} /></li>);
+                return (<li key={a.id}><ArtistCard artist={a} songTitle={featured?.title} /></li>);
               })}
             </ul>
           ) : (
             <EmptyState title="Artist profiles are on their way" action={<WhatsAppButton topic="featured" variant="outline">Discuss your project</WhatsAppButton>}>
-              A curated catalogue of the artists Fresh Wind Music has worked with — with their music, credits and links — will appear here once each artist and credit is confirmed.
+              A curated catalogue of gospel and worship artists — with their music and links — will appear here once each artist is confirmed.
             </EmptyState>
           )}
         </div>

@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { ExternalLink } from "lucide-react";
 import { pageMetadata } from "@/lib/seo";
 import { staticSlugs } from "@/lib/utils";
-import { getArtist, getProject, projects } from "@/content";
+import { getProject, projects } from "@/content";
 import { Section } from "@/components/site/section";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -25,7 +25,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const project = getProject((await params).slug);
   if (!project) notFound();
-  const artist = project.artistId ? getArtist(project.artistId) : undefined;
 
   return (
     <>
@@ -37,7 +36,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             <h1 className="display mt-5 text-5xl sm:text-6xl">{project.title}</h1>
             {project.artistName && (
               <p className="mt-4 text-lg text-cream/80">
-                {artist ? <Link href={`/artists/${artist.slug}`} className="hover:text-amber">{project.artistName}</Link> : project.artistName}
+                {project.artistName}
                 {project.year ? ` · ${project.year}` : ""}
               </p>
             )}

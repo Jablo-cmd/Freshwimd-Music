@@ -4,39 +4,21 @@ No database is needed: content lives in typed files under `content/`. Adding a r
 pages, the homepage (if `featured`), the sitemap, and generates its own detail page. Records with
 `published: false` are ignored. **Never add anything you do not have permission to publish.**
 
-## Artist (`content/artists.ts`)
+## Artists & Music (`content/artists.ts`, `content/tracks.ts`)
+Each artist is shown as a picture, a name and a song. Add an artist and their song and they appear on `/artists` and the home page:
 ```ts
-{
-  id: "artist-name", name: "Artist Name", slug: "artist-name",
-  shortBio: "One or two sentences for the card.",
-  biography: "Full biography. Separate paragraphs with a blank line.",
-  profileImage: "/images/artists/artist-name.jpg", coverImage: "/images/artists/artist-name-cover.jpg",
-  genres: ["Gospel", "Afro-soul"],
-  relationship: "produced",            // "produced" | "collaborated" | "supported"
-  contributionSummary: "Confirmed credit, e.g. 'Production and mixing on the EP …'",
-  featuredTrackId: "artist-name-track-1",
-  socialLinks: [{ label: "Instagram", href: "https://…" }],
-  platformLinks: [{ label: "Spotify", href: "https://open.spotify.com/artist/…" }],
-  featured: true, published: true,
-}
+// content/artists.ts
+{ id: "artist-name", name: "Artist Name", slug: "artist-name", featuredTrackId: "artist-name-song",
+  profileImage: "/images/artists/artist-name.jpg", profileImageAlt: "Artist Name — portrait photograph",   // optional
+  featured: true, published: true }
+// content/tracks.ts
+song("artist-name-song", "artist-name", "Song Title", { embedUrl: "https://youtu.be/VIDEO_ID", listenUrl: "https://youtu.be/VIDEO_ID" })
 ```
-`relationship` controls the transparency label and grouping. Nothing implies an artist is signed.
-
-## Track (`content/tracks.ts`)
-```ts
-{
-  id: "artist-name-track-1", artistId: "artist-name", title: "Song title", releaseYear: 2025,
-  platform: "spotify",                 // "spotify" | "soundcloud" | "youtube" | "hosted"
-  embedUrl: "https://open.spotify.com/track/…",   // normal share URL is fine
-  listenUrl: "https://open.spotify.com/track/…",
-  artwork: "/images/artists/artist-name-track-1.jpg",
-  credits: ["Production", "Mixing", "Mastering"], creditsConfirmed: true,   // credits show ONLY when true
-  featured: true, published: true,
-}
-```
-Embeds are validated in `lib/media.ts` (only Spotify, SoundCloud and YouTube-nocookie are allowed) and load only
-after the visitor presses play; starting one stops the others. For `platform: "hosted"` provide `audioUrl`
-(authorised previews only).
+- Platforms: YouTube / Spotify / SoundCloud embeds (`embedUrl`, a normal share link is fine), `platform: "hosted"` + `audioUrl` for authorised previews,
+  or `platform: "external"` + `listenUrl` for a plain "Listen now" button. Embeds load only after the visitor presses play; one plays at a time.
+- Photos: save the authorised original in `public/images/artists/`, run `python3 scripts/prepare-images.py`, then set `profileImage`. Without a photo a branded monogram is shown.
+- Optional descriptive fields (`biography`, `genres`, `releases`, …) exist in `content/types.ts` for future profile pages but are not displayed.
+- Record every photograph's source and licence in `docs/ARTIST_RESEARCH.md`.
 
 ## Portfolio project (`content/projects.ts`)
 `category` must be one of the eight categories in `content/types.ts`. `contribution` is displayed only when
