@@ -20,6 +20,8 @@ interface Props {
   className?: string;
 }
 
+const playButtonClass = "flex size-12 shrink-0 items-center justify-center rounded-full bg-amber text-ink transition-colors hover:bg-amber-soft";
+
 const fmt = (s: number) => (Number.isFinite(s) ? `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}` : "0:00");
 
 /**
@@ -46,18 +48,20 @@ export function TrackPlayer({ id, title, subtitle, platform, embedUrl, audioUrl,
 
   if (!hosted && !embed) {
     if (!listenUrl) return null;
+    // Link-only song: same layout and round play button as the players, opening the official page.
     return (
-      <div className={cn("rounded-sm border border-line bg-surface-soft p-4", className)}>
-        <div className="flex items-center gap-4">
+      <div className={cn("overflow-hidden rounded-sm border border-line bg-surface-soft", className)}>
+        <div className="flex items-center gap-4 p-4">
           {artwork && <div className="relative size-16 shrink-0 overflow-hidden rounded-sm bg-surface"><Image src={artwork} alt="" fill sizes="64px" className="object-cover" /></div>}
           <div className="min-w-0 flex-1">
             <p className="font-medium text-cream">{title}</p>
             {subtitle && <p className="truncate text-xs uppercase tracking-[0.14em] text-muted">{subtitle}</p>}
           </div>
+          <a href={listenUrl} target="_blank" rel="noopener noreferrer" className={playButtonClass}>
+            <Play className="size-5 translate-x-px" aria-hidden="true" />
+            <span className="sr-only">Listen to {title} (opens in a new tab)</span>
+          </a>
         </div>
-        <a href={listenUrl} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-sm bg-amber px-4 py-2 text-[0.75rem] font-medium uppercase tracking-[0.14em] text-ink transition-colors hover:bg-amber-soft">
-          <Play className="size-4 fill-current" aria-hidden="true" /> Listen now<span className="sr-only"> to {title} (opens in a new tab)</span>
-        </a>
       </div>
     );
   }
@@ -84,7 +88,7 @@ export function TrackPlayer({ id, title, subtitle, platform, embedUrl, audioUrl,
             type="button"
             onClick={toggleHosted}
             aria-label={`${playing ? "Pause" : "Play"} ${title}`}
-            className="flex size-12 shrink-0 items-center justify-center rounded-full bg-amber text-ink transition-colors hover:bg-amber-soft"
+            className={playButtonClass}
           >
             {playing ? <Pause className="size-5" aria-hidden="true" /> : <Play className="size-5 translate-x-px" aria-hidden="true" />}
           </button>
@@ -94,7 +98,7 @@ export function TrackPlayer({ id, title, subtitle, platform, embedUrl, audioUrl,
               type="button"
               onClick={() => { setActive(id); setEmbedOpen(true); }}
               aria-label={`Load ${platformLabel[platform]} player for ${title}`}
-              className="flex size-12 shrink-0 items-center justify-center rounded-full bg-amber text-ink transition-colors hover:bg-amber-soft"
+              className={playButtonClass}
             >
               <Play className="size-5 translate-x-px" aria-hidden="true" />
             </button>
