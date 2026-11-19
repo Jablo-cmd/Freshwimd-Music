@@ -45,11 +45,21 @@ export function TrackPlayer({ id, title, subtitle, platform, embedUrl, audioUrl,
   const embedVisible = embedOpen && isActive;
 
   if (!hosted && !embed) {
-    return listenUrl ? (
-      <a href={listenUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-amber hover:underline">
-        Listen to {title} <ExternalLink className="size-4" aria-hidden="true" /><span className="sr-only">(opens in a new tab)</span>
-      </a>
-    ) : null;
+    if (!listenUrl) return null;
+    return (
+      <div className={cn("rounded-sm border border-line bg-surface-soft p-4", className)}>
+        <div className="flex items-center gap-4">
+          {artwork && <div className="relative size-16 shrink-0 overflow-hidden rounded-sm bg-surface"><Image src={artwork} alt="" fill sizes="64px" className="object-cover" /></div>}
+          <div className="min-w-0 flex-1">
+            <p className="font-medium text-cream">{title}</p>
+            {subtitle && <p className="truncate text-xs uppercase tracking-[0.14em] text-muted">{subtitle}</p>}
+          </div>
+        </div>
+        <a href={listenUrl} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-sm bg-amber px-4 py-2 text-[0.75rem] font-medium uppercase tracking-[0.14em] text-ink transition-colors hover:bg-amber-soft">
+          <Play className="size-4 fill-current" aria-hidden="true" /> Listen now<span className="sr-only"> to {title} (opens in a new tab)</span>
+        </a>
+      </div>
+    );
   }
 
   const toggleHosted = () => {
@@ -64,11 +74,9 @@ export function TrackPlayer({ id, title, subtitle, platform, embedUrl, audioUrl,
   return (
     <div className={cn("overflow-hidden rounded-sm border border-line bg-surface-soft", className)}>
       <div className="flex items-center gap-4 p-4">
-        <div className="relative size-16 shrink-0 overflow-hidden rounded-sm bg-surface">
-          {artwork && <Image src={artwork} alt="" fill sizes="64px" className="object-cover" />}
-        </div>
+        {artwork && <div className="relative size-16 shrink-0 overflow-hidden rounded-sm bg-surface"><Image src={artwork} alt="" fill sizes="64px" className="object-cover" /></div>}
         <div className="min-w-0 flex-1">
-          <p className="truncate font-medium text-cream">{title}</p>
+          <p className="font-medium text-cream">{title}</p>
           <p className="truncate text-xs uppercase tracking-[0.14em] text-muted">{[subtitle, platformLabel[platform]].filter(Boolean).join(" · ")}</p>
         </div>
         {hosted ? (
@@ -125,8 +133,8 @@ export function TrackPlayer({ id, title, subtitle, platform, embedUrl, audioUrl,
         <iframe
           src={embed.autoplaySrc}
           title={`${embed.title}: ${title}`}
-          height={embed.height}
-          className="block w-full border-t border-line-soft"
+          {...(embed.platform === "youtube" ? {} : { height: embed.height })}
+          className={cn("block w-full border-t border-line-soft", embed.platform === "youtube" && "aspect-video")}
           allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
           allowFullScreen
           loading="lazy"
@@ -137,7 +145,7 @@ export function TrackPlayer({ id, title, subtitle, platform, embedUrl, audioUrl,
       {listenUrl && (
         <div className="border-t border-line-soft px-4 py-3">
           <a href={listenUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.14em] text-muted transition-colors hover:text-amber">
-            Listen on the official platform <ExternalLink className="size-3.5" aria-hidden="true" /><span className="sr-only">(opens in a new tab)</span>
+            Open on {platformLabel[platform]} <ExternalLink className="size-3.5" aria-hidden="true" /><span className="sr-only">(opens in a new tab)</span>
           </a>
         </div>
       )}

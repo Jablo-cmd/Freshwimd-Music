@@ -26,7 +26,7 @@ function safeUrl(input: string): URL | null {
  * Only Spotify, SoundCloud and YouTube are allowed; anything else returns null.
  */
 export function toEmbed(platform: Platform, input?: string): EmbedSpec | null {
-  if (!input || platform === "hosted") return null;
+  if (!input || platform === "hosted" || platform === "external") return null;
   const u = safeUrl(input);
   if (!u) return null;
   const host = u.hostname.replace(/^www\./, "");
@@ -64,4 +64,5 @@ export const platformLabel: Record<Platform, string> = {
   soundcloud: "SoundCloud",
   youtube: "YouTube",
   hosted: "Preview",
+  external: "Listen",
 };
