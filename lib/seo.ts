@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "@/content/site";
+import { absUrl } from "@/lib/url";
 
 interface PageMeta {
   title: string;
@@ -11,7 +12,7 @@ interface PageMeta {
 
 /** Unique title, description, canonical URL, Open Graph and Twitter metadata for a page. */
 export function pageMetadata({ title, description, path, image = "/og-image.jpg", noIndex }: PageMeta): Metadata {
-  const url = `${site.url}${path === "/" ? "" : path}`;
+  const url = absUrl(path);
   return {
     title,
     description,

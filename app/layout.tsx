@@ -15,11 +15,11 @@ const sans = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swa
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Fresh Wind Music | Music Production & Lessons Johannesburg",
+    default: "Fresh Wind Music | Recording Studio, Johannesburg",
     template: "%s | Fresh Wind Music",
   },
   description:
-    "Johannesburg music production, mixing and mastering, songwriting, vocal coaching and piano, keyboard and music production lessons.",
+    "Johannesburg recording studio for albums, EPs, choirs, gospel and single songs. Artists, churches, schools and universities welcome across South Africa.",
   applicationName: site.name,
   alternates: { canonical: "/" },
   openGraph: { type: "website", siteName: site.name, locale: "en_ZA", images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: `${site.name} — ${site.tagline}` }] },

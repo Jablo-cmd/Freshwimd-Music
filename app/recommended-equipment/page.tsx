@@ -7,6 +7,7 @@ import { Section, SectionHeading } from "@/components/site/section";
 import { EmptyState } from "@/components/site/empty-state";
 import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { CtaBand } from "@/components/site/cta-band";
+import { BreadcrumbJsonLd } from "@/components/site/breadcrumb-json-ld";
 
 export const metadata = pageMetadata({
   title: "Recommended Music Equipment",
@@ -19,6 +20,7 @@ export default function EquipmentPage() {
   const products = equipmentProducts.filter((p) => p.published);
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Recommended Equipment", path: "/recommended-equipment" }]} />
       <PageHero
         eyebrow="Recommended equipment"
         title="The right tools make better music."

@@ -9,6 +9,7 @@ import { Reveal } from "@/components/site/reveal";
 import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { CtaBand } from "@/components/site/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
+import { BreadcrumbJsonLd } from "@/components/site/breadcrumb-json-ld";
 
 export const metadata = pageMetadata({
   title: "Music Lessons in Johannesburg",
@@ -20,6 +21,7 @@ export const metadata = pageMetadata({
 export default function LessonsPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Music Lessons", path: "/music-lessons" }]} />
       <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: lessonFaqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }} />
       <PageHero
         eyebrow="Music lessons"

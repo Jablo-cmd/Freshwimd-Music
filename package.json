@@ -8,7 +8,8 @@
     "start": "next start",
     "build:static": "STATIC_EXPORT=1 next build && cp deploy/.htaccess out/.htaccess",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "seo:audit": "node scripts/seo-audit.mjs out"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.3.1",

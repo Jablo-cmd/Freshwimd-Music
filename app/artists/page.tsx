@@ -6,6 +6,7 @@ import { ArtistListenCard } from "@/components/site/artist-listen-card";
 import { EmptyState } from "@/components/site/empty-state";
 import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { CtaBand } from "@/components/site/cta-band";
+import { BreadcrumbJsonLd } from "@/components/site/breadcrumb-json-ld";
 
 export const metadata = pageMetadata({
   title: "Artists & Music",
@@ -16,6 +17,7 @@ export const metadata = pageMetadata({
 export default function ArtistsPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Artists & Music", path: "/artists" }]} />
       <PageHero eyebrow="Artists & Music" title="Gospel voices. Worship you can hear." image="controlRoomSession" />
       <Section className="pt-16 sm:pt-20">
         {artists.length === 0 ? (

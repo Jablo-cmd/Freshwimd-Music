@@ -1,7 +1,7 @@
-import { Compass, GraduationCap, Mic, Music, PenLine, SlidersHorizontal, type LucideProps } from "lucide-react";
+import { Church, Compass, Disc3, GraduationCap, Mic, Music, PenLine, SlidersHorizontal, Users, type LucideProps } from "lucide-react";
 import type { Service } from "@/content/services";
 
-const map = { music: Music, sliders: SlidersHorizontal, pen: PenLine, mic: Mic, compass: Compass, graduation: GraduationCap };
+const map = { music: Music, sliders: SlidersHorizontal, pen: PenLine, mic: Mic, compass: Compass, graduation: GraduationCap, disc: Disc3, users: Users, church: Church };
 
 export function ServiceIcon({ name, ...props }: { name: Service["icon"] } & LucideProps) {
   const Icon = map[name];
