@@ -19,7 +19,7 @@ import { CtaBand } from "@/components/site/cta-band";
 import { EmptyState } from "@/components/site/empty-state";
 
 export const metadata = pageMetadata({
-  title: "Fresh Wind Music | Recording Studio, Johannesburg",
+  title: "Recording Studio South Africa | Fresh Wind Music",
   description:
     "Johannesburg recording studio for albums, EPs, choirs, gospel and single songs. Artists, churches, schools and universities welcome across South Africa.",
   path: "/",

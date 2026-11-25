@@ -19,7 +19,7 @@ export const generateStaticParams = () => articles.map((a) => ({ slug: a.slug })
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const a = getArticle((await params).slug);
   if (!a) return {};
-  return pageMetadata({ title: a.metaTitle ?? a.title, description: a.description, path: `/resources/${a.slug}` });
+  return pageMetadata({ title: a.metaTitle ?? a.title, description: a.description, path: `/resources/${a.slug}`, type: "article", publishedTime: a.published, modifiedTime: a.updated });
 }
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -40,7 +40,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           datePublished: article.published,
           dateModified: article.updated,
           mainEntityOfPage: absUrl(`/resources/${article.slug}`),
-          author: { "@type": "Organization", name: site.name, url: site.url },
+          author: { "@type": "Organization", name: site.name, url: absUrl("/") },
           publisher: { "@type": "Organization", name: site.name, logo: { "@type": "ImageObject", url: `${site.url}/images/site/logo-full.jpg` } },
           image: `${site.url}/og-image.jpg`,
         }}

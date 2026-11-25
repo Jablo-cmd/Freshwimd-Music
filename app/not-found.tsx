@@ -1,5 +1,9 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
+
+/** Error pages must never be indexed (the root layout otherwise asks for indexing). */
+export const metadata: Metadata = { title: "Page not found", robots: { index: false, follow: false } };
 
 export default function NotFound() {
   return (

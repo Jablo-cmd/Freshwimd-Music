@@ -169,7 +169,7 @@ export const services: Service[] = [
       "You receive your mastered EP, ready for release, in the formats agreed at the start.",
     ),
     related: ["album-recording-production", "single-song-recording", "gospel-recording-production", "mixing-mastering", "school-choir-recording"],
-    guides: ["ep-vs-album-vs-single", "how-to-record-an-album"],
+    guides: ["what-to-know-before-recording-your-first-ep", "ep-vs-album-vs-single", "how-to-record-an-album"],
     faqs: [
       { q: "How many songs are on an EP?", a: "EPs are usually a small collection of songs, often three to six. The right number is whatever suits your project, and we can advise." },
       { q: "Can we record an EP and later turn it into an album?", a: "Yes. Many artists release an EP first and continue with an album. We can plan the work so the recordings fit together." },
@@ -225,7 +225,7 @@ export const services: Service[] = [
     ),
     regionNote: "Our recording studio is in Johannesburg. Choirs from across South Africa are welcome to enquire.",
     related: ["school-choir-recording", "university-college-choir-recording", "church-choir-recording", "worship-team-recording", "album-recording-production", "ep-recording-production"],
-    guides: ["prepare-a-choir-for-recording", "how-to-record-an-album"],
+    guides: ["how-professional-choir-recording-works", "prepare-a-choir-for-recording", "how-to-record-an-album"],
     faqs: [
       { q: "Do you record choirs from outside Johannesburg?", a: "Recording takes place at our Johannesburg studio, and choirs from across South Africa are welcome to enquire. We will discuss how to plan your project and your visit." },
       { q: "How many singers can you record?", a: "Tell us the size of your choir and the voice parts, and we will discuss how your group can be recorded." },
@@ -334,7 +334,7 @@ export const services: Service[] = [
     ),
     regionNote: "Our recording studio is in Johannesburg. Universities and colleges from across South Africa are welcome to enquire.",
     related: ["choir-recording-south-africa", "school-choir-recording", "church-choir-recording", "album-recording-production", "ep-recording-production"],
-    guides: ["prepare-a-choir-for-recording", "how-to-record-an-album"],
+    guides: ["recording-a-university-choir", "prepare-a-choir-for-recording"],
     faqs: [
       { q: "Can a student group record with you?", a: "Yes. Student choirs, gospel choirs, music societies and other organised ensembles are welcome." },
       { q: "Can we record an album over several sessions?", a: "Tell us about your timeline and the academic calendar and we will discuss how to plan the project." },
@@ -574,6 +574,11 @@ export const services: Service[] = [
     ],
     sections: [
       {
+        heading: "Vocal recording for singers and independent artists",
+        paragraphs: ["If you sing, your voice is the centre of the recording. Fresh Wind Music records lead vocals, harmonies and backing vocals for independent artists, and for singers adding vocals to tracks made elsewhere. Tell us the song, the style and how you want to sound, and we will plan the session around you."],
+        list: ["Lead vocals for singles, demos and EPs", "Harmonies and backing vocals", "Vocal overdubs and extra takes", "Vocals recorded for a track made elsewhere", "Vocal editing and clean-up, with mixing and mastering if you want the song finished"],
+      },
+      {
         heading: "Who records a single song?",
         list: ["Emerging artists releasing their first song", "Singers recording a demo to share with producers, promoters or labels", "Songwriters who want to hear their songs properly", "Artists adding vocals or instruments to a track made elsewhere", "Anyone marking an occasion, a wedding, a tribute or a milestone with a recording"],
       },
@@ -591,14 +596,16 @@ export const services: Service[] = [
     guides: ["prepare-for-a-recording-session"],
     faqs: [
       { q: "Can I record just one song?", a: "Yes. Single-song recording is welcome, and a single is a good way to begin." },
+      { q: "Do you record independent artists and singers?", a: "Yes. Independent artists and singers are welcome, whether you are recording one song or planning an EP or album." },
+      { q: "Can I record vocals for a track made elsewhere?", a: "Yes. Tell us what you have and what you need and we will plan the session." },
       { q: "Can I record a demo?", a: "Yes. Demos are a good way to hear your song and share it with others, and can be developed into a full production later." },
       { q: "Can you mix and master my single?", a: "Yes. If you want the song finished for release, mixing and mastering can be part of the project." },
       { q: "How much does recording one song cost?", a: "Pricing is enquiry-based and depends on what the song needs. We provide a quotation once we understand your project." },
     ],
     topic: "single",
     href: "/services/single-song-recording",
-    metaTitle: "Single Song & Vocal Recording Johannesburg",
-    metaDescription: "Record a single song, demo or vocal in Johannesburg. Single-song clients are always welcome, with mixing and mastering available.",
+    metaTitle: "Vocal & Single Song Recording Studio",
+    metaDescription: "Vocal recording studio in Johannesburg for singers and independent artists. Single songs and demos welcome; mixing and mastering available.",
   },
   {
     slug: "mixing-mastering",
@@ -688,8 +695,8 @@ export const services: Service[] = [
     ],
     topic: "production",
     href: "/services/music-production",
-    metaTitle: "Music Production South Africa",
-    metaDescription: "Music production in Johannesburg for artists, choirs and groups across South Africa: full production, arrangements and custom instrumentals.",
+    metaTitle: "Music Production Studio South Africa",
+    metaDescription: "Professional music production from a Johannesburg studio: arrangement, custom instrumentals and full production for artists, choirs and groups.",
   },
   {
     slug: "songwriting-composition",

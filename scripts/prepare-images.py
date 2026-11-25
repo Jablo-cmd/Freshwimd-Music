@@ -1,8 +1,8 @@
-"""Derives web-ready crops from the originals in public/images (originals are left untouched).
+"""Derives web-ready crops from the originals in assets-src/originals (kept out of /public so they are not served or crawled).
 Run: python3 scripts/prepare-images.py"""
 from PIL import Image, ImageDraw
 import os
-src, out = "public/images", "public/images/site"
+src, out = "assets-src/originals", "public/images/site"
 os.makedirs(out, exist_ok=True)
 
 def save(im, name, q=84):
@@ -26,7 +26,7 @@ crop(f"{src}/c01498ff6e4713aa712704d0d5550771.jpg", (215, 150, 735, 1018), "prod
 for f, n in [("40dd9c7f6345c55356262ce4a1021c5c.jpg", "burgundy-control-room.jpg"),
              ("5f355139dc100c42196a1fb729fb5792.jpg", "live-room-instruments.jpg")]:
     save(Image.open(f"{src}/{f}"), n)
-save(Image.open("Screenshot_20260507_103847_com.pinterest_edit_10641968965562.jpg"), "large-format-console.jpg")
+save(Image.open(f"{src}/Screenshot_20260507_103847_com.pinterest_edit_10641968965562.jpg"), "large-format-console.jpg")
 
 # Logo: emblem with transparent background (luminance -> alpha)
 logo = Image.open(f"{src}/file_000000001b4882089cd59d03d1e97558.png").convert("RGB")
