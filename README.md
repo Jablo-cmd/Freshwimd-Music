@@ -13,17 +13,17 @@ npm run dev          # http://localhost:3000
 npm run typecheck && npm run lint
 npm run build && npm start
 ```
-Optional: copy `.env.example` to `.env.local`. `FWM_SAMPLE_CONTENT=1` previews artist/portfolio layouts with
+Optional: copy `.env.example` to `.env.local`. `FWM_SAMPLE_CONTENT=1` previews artist layouts with
 labelled sample data (development only).
 
 ## Structure
 ```
-app/                 routes: /, /services(/[slug]), /portfolio(/[slug]), /artists(/[slug]), /studio,
-                     /music-lessons, /recommended-equipment, /contact, sitemap, robots, error/404/loading
+app/                 routes: /, /services(/[slug]), /artists,
+                     /music-lessons, /resources(/[slug]), /contact, sitemap, robots, error/404/loading
 components/ui        button, badge, sheet (shadcn-style)
-components/site      header, footer, cards, hero, forms, portfolio filter, CTA, JSON-LD …
+components/site      header, footer, cards, hero, forms, CTA, JSON-LD …
 components/media     single-playback manager + track player (hosted audio, Spotify, SoundCloud, YouTube)
-content/             site details, services, lessons, equipment, artists, tracks, projects, image registry
+content/             site details, services, lessons, equipment, artists, tracks, image registry
 lib/                 SEO metadata, WhatsApp links, embed validation, structured data
 docs/                ASSET_INVENTORY.md, CONTENT_GUIDE.md
 scripts/             prepare-images.py (derives web crops from original photographs)

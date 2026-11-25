@@ -22,7 +22,7 @@ Each page targets one primary intent; related phrases are used naturally in head
 
 | Cluster | Intent / scope | Primary page | Supporting |
 |---|---|---|---|
-| Recording studio (South Africa / Johannesburg) | national + local, general | `/studio/` (Johannesburg, local) and `/services/` (hub) | home `/` |
+| Recording studio (South Africa / Johannesburg) | national + local, general | `/contact/` (Johannesburg address, directions, service area) and `/services/` (hub) | home `/` |
 | **Album recording & production** (Tier 1) | national + Johannesburg | `/services/album-recording-production/` | guide `how-to-record-an-album`, `ep-vs-album-vs-single` |
 | **EP recording & production** (Tier 1) | national + Johannesburg | `/services/ep-recording-production/` | guide `ep-vs-album-vs-single` |
 | **Choir recording — national** (Tier 1) | national | `/services/choir-recording-south-africa/` | guide `prepare-a-choir-for-recording` |
@@ -39,14 +39,14 @@ Each page targets one primary intent; related phrases are used naturally in head
 
 **Deliberately not built:** pages per city (Cape Town, Durban, Pretoria…), pages per genre beyond gospel and jazz (R&B, amapiano, hip-hop,
 afro-soul, etc.) and separate "gospel choir" / "vocal recording" pages. They would be thin or would duplicate church-choir / single-song
-content. Other genres are welcomed in copy ("every style welcome") and can get a page once there is genuine unique content (e.g. a portfolio example).
+content. Other genres are welcomed in copy ("every style welcome") and can get a page once there is genuine unique content (e.g. a real project to feature).
 Podcast and advert pages drafted earlier were dropped: outside the brief's tiers.
 
 ## 3. National vs local
 - **National:** the choir hub and its four sub-pages, album and EP pages, gospel/worship/jazz pages. Copy says plainly: *the studio is in
   Johannesburg; clients from across South Africa are welcome to enquire; recording takes place at the Johannesburg studio.* No page claims
   studios, mobile recording or on-location recording elsewhere, and none promises travel support.
-- **Local (Johannesburg):** `/studio/` (title "Recording Studio Johannesburg"), address on every page (footer, contact, LocalBusiness data), directions link,
+- **Local (Johannesburg):** `/contact/` (title "Contact the Johannesburg Recording Studio"), address on every page (footer, contact, LocalBusiness data), directions link,
   Google Business Profile (see §6). Structured data `areaServed`: Johannesburg, Gauteng, South Africa.
 
 ## 4. On-page and technical implementation (summary)
@@ -62,7 +62,7 @@ Podcast and advert pages drafted earlier were dropped: outside the brief's tiers
 1. Confirm every service described (album, EP, each choir/worship/gospel/jazz page, single-song, demos) is genuinely offered, and the wording about how groups are recorded.
 2. Studio facts you want published: room/choir capacity, equipment list, accompaniment options (piano/band), typical project stages and timelines.
 3. Whether any form of on-location, live-service or remote recording is offered (the site currently says recording takes place at the Johannesburg studio).
-4. Real portfolio items (albums/EPs/choir projects) with permission, and genuine client testimonials/reviews.
+4. Real album/EP/choir projects you may feature (with permission) and genuine client testimonials/reviews. Featured work lives on Artists & Music and on the relevant service pages.
 5. Official social profiles (none are linked today), opening hours, and Google Business Profile access.
 6. Whether physical CD/duplication or distribution help is offered (not claimed anywhere).
 
@@ -87,7 +87,7 @@ Podcast and advert pages drafted earlier were dropped: outside the brief's tiers
 - Track enquiries (WhatsApp clicks by topic are distinguishable by prefilled message). Privacy-respecting analytics can be added later; none is installed.
 
 ## 8. Content roadmap
-- Publish real portfolio entries (album/EP/choir projects with permission) and link them from the matching service pages.
+- Feature real album/EP/choir projects (with permission) on Artists & Music and link them from the matching service pages.
 - With permission, add a case-study page per completed choir/album project (unique content beats generic copy).
 - Guides to add next: "How to choose a recording studio", "What to bring to a choir recording", "How long does it take to record an album?" (only with confirmed information).
 - Revisit R&B / amapiano / hip-hop / afro-soul pages only when there is real work to show.
@@ -103,8 +103,8 @@ sitemap or JSON-LD URL is off-origin or lacks a trailing slash, if lastmod value
 ## 11. Keyword coverage (no volumes measured — see §1)
 | Group | Targeted now by | Gap / future content |
 |---|---|---|
-| Recording studio South Africa (general, professional, music production studio) | home, `/services/`, `/studio/`, `/services/music-production/` | case studies once real projects exist |
-| Album & EP recording (incl. gospel / jazz album & EP, independent artist) | album, EP, gospel, jazz pages; guides: how to record an album, EP vs album vs single, first-EP guide | portfolio entries per album/EP |
+| Recording studio South Africa (general, professional, music production studio) | home, `/services/`, `/contact/`, `/services/music-production/` | case studies once real projects exist |
+| Album & EP recording (incl. gospel / jazz album & EP, independent artist) | album, EP, gospel, jazz pages; guides: how to record an album, EP vs album vs single, first-EP guide | featured releases on Artists & Music per album/EP |
 | Choir recording (school, university, church, gospel choir, choir album/music production) | choir hub + school, university/college, church pages; guides: how choir recording works, prepare a choir, school guide, university guide | live-choir recording is **not** targeted: not a confirmed service |
 | Church & worship (church music/album recording, praise & worship team, Christian music, worship album) | church choir, worship-team and gospel pages; church & worship album guide | a dedicated "recording a praise and worship team" guide (see §12) |
 | Independent artists / singers / vocal recording | single-song & vocal page (vocal-recording section, independent-artist FAQ); "How Independent Artists Can Prepare for Studio Recording" | — |
@@ -116,3 +116,12 @@ sitemap or JSON-LD URL is off-origin or lacks a trailing slash, if lastmod value
 Recording a praise and worship team (distinct from the combined church guide); What to expect on recording day; How long does an album take to record
 (needs real turnaround data); Choosing a recording studio; Case studies for each completed album/EP/choir project (needs permission and verified credits);
 Gospel album production for independent artists. Do not publish these until the facts exist.
+
+## 13. Removed sections (25 Nov 2026)
+The **Portfolio**, **Recommended Equipment** and **Studio & Equipment** sections were removed at the owner's request, and with them every SEO trace:
+navigation and footer links, home-page sections, sitemap entries and last-modified dates, page metadata and structured data (BreadcrumbList / listings), the
+keyword plan, the audit script's expectations, the enquiry-form option, the `equipment` WhatsApp topic and their content files. Their old web addresses are kept only as
+**permanent-redirect stubs** (`/portfolio/` → Artists & Music, `/studio/` → Contact, `/recommended-equipment/` → home) so existing links and any indexed copies
+resolve instead of returning 404. The stubs are not linked, not in the sitemap and canonicalise to their targets; delete them once Search Console no longer lists the old URLs.
+The studio's Johannesburg address, directions and service area now live on `/contact/` and in the site footer. "Recording studio" remains a core keyword for the business; only the
+separate pages were removed.

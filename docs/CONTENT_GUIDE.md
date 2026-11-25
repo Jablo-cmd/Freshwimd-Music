@@ -1,4 +1,4 @@
-# Content guide — adding artists, tracks, projects and products
+# Content guide — adding artists, tracks and products
 
 No database is needed: content lives in typed files under `content/`. Adding a record makes it appear on listing
 pages, the homepage (if `featured`), the sitemap, and generates its own detail page. Records with
@@ -20,13 +20,6 @@ song("artist-name-song", "artist-name", "Song Title", { embedUrl: "https://youtu
 - Optional descriptive fields (`biography`, `genres`, `releases`, …) exist in `content/types.ts` for future profile pages but are not displayed.
 - Record every photograph's source and licence in `docs/ARTIST_RESEARCH.md`.
 
-## Portfolio project (`content/projects.ts`)
-`category` must be one of the eight categories in `content/types.ts`. `contribution` is displayed only when
-`contributionConfirmed: true`. Projects can link to an artist via `artistId`.
-
-## Recommended equipment (`content/equipment.ts`)
-Add only real products: real name, permitted image and real product-page URL. No prices or stock status are displayed.
-
 ## Services and lessons
 `content/services.ts` / `content/lessons.ts`. Set `confirmed: false` on any service item that is not yet confirmed
 as available — it is hidden from the public site until set back to `true`.
@@ -38,6 +31,6 @@ so every layout can be previewed. Never set this in production.
 ## Supabase
 Not used. Content volume is small, changes are infrequent and nothing requires user accounts or server state, so a
 backend would add cost and attack surface without benefit. If artists/releases later need non-developer editing,
-the types in `content/types.ts` map one-to-one to tables (`artists`, `tracks`, `projects`) with public-read RLS
+the types in `content/types.ts` map one-to-one to tables (`artists`, `tracks`) with public-read RLS
 policies (`published = true`) and writes restricted to authenticated admins. The proposed schema would be
 documented and reviewed before any production database change.
