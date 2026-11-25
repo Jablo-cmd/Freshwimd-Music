@@ -3,7 +3,7 @@ import { mainNav } from "@/content/site";
 import { absUrl } from "@/lib/url";
 import { articles } from "@/content/resources";
 import { services } from "@/content/services";
-import { artists, projects } from "@/content";
+import { artists } from "@/content";
 import { pageLastModified, serviceLastModified } from "@/content/lastmod";
 
 export const dynamic = "force-static";
@@ -31,7 +31,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...services
       .filter((s) => s.href.startsWith("/services/"))
       .map((s) => entry(s.href, 0.8, serviceLastModified.overrides[s.slug] ?? serviceLastModified.default)),
-    ...projects.map((p) => entry(`/portfolio/${p.slug}`, 0.6, (p as { updated?: string }).updated)),
     entry("/resources", 0.7, pageLastModified["/resources"]),
     ...articles.map((a) => entry(`/resources/${a.slug}`, 0.6, a.updated)),
   ];

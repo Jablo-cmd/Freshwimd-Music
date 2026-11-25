@@ -101,7 +101,7 @@ for (const file of htmlFiles.sort()) {
   jsonLdSeen[rel] = types;
   if (!isError) {
     if (rel === "/" && !(types.includes("LocalBusiness") && types.includes("WebSite") && types.includes("Organization"))) note(`${rel}: expected Organization + LocalBusiness + WebSite JSON-LD`);
-    if (rel !== "/" && !types.includes("BreadcrumbList") && !/^\/(artists|portfolio|studio|music-lessons|recommended-equipment|contact|resources)\/$/.test(rel) === false && !types.includes("BreadcrumbList")) note(`${rel}: missing BreadcrumbList JSON-LD`);
+    if (rel !== "/" && !types.includes("BreadcrumbList") && !/^\/(artists|music-lessons|contact|resources)\/$/.test(rel) === false && !types.includes("BreadcrumbList")) note(`${rel}: missing BreadcrumbList JSON-LD`);
     if (/^\/services\/[^/]+\/$/.test(rel) && !types.includes("Service")) note(`${rel}: service page without Service JSON-LD`);
     if (/^\/resources\/[^/]+\/$/.test(rel) && !types.includes("Article")) note(`${rel}: guide without Article JSON-LD`);
     if (rel === "/artists/" && !(types.includes("MusicGroup") && types.includes("MusicRecording"))) note(`${rel}: missing MusicGroup / MusicRecording JSON-LD`);

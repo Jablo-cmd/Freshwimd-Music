@@ -20,7 +20,6 @@ export const whatsappMessages = {
   artistDevelopment: "Hello Fresh Wind Music, I would like to discuss artist development.",
   lessons: "Hello Fresh Wind Music, I would like to enquire about piano, keyboard or music production lessons.",
   lessonsGeneral: "Hello Fresh Wind Music, I would like to enquire about music lessons.",
-  equipment: "Hello Fresh Wind Music, I would like advice on recommended music equipment.",
   featured: "Hello Fresh Wind Music, I would like to discuss a project and being featured on your website.",
 } as const;
 

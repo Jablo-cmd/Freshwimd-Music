@@ -69,7 +69,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             {service.regionNote && (
               <p className="mt-8 flex items-start gap-3 rounded-sm border border-amber/30 bg-surface-soft p-5 text-sm leading-relaxed text-cream/90">
                 <MapPin className="mt-0.5 size-4 shrink-0 text-amber" aria-hidden="true" />
-                <span>{service.regionNote} See the <Link href="/studio" className="text-amber underline underline-offset-4">recording studio in Johannesburg</Link>.</span>
+                <span>{service.regionNote} Find the <Link href="/contact" className="text-amber underline underline-offset-4">recording studio in Johannesburg</Link>.</span>
               </p>
             )}
           </div>

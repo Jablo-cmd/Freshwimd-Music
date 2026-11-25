@@ -31,10 +31,7 @@ export const mapsEmbed = `https://www.google.com/maps?q=${encodeURIComponent(ful
 export const mainNav = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "Portfolio", href: "/portfolio" },
   { label: "Artists & Music", href: "/artists" },
-  { label: "Studio & Equipment", href: "/studio" },
   { label: "Music Lessons", href: "/music-lessons" },
-  { label: "Recommended Equipment", href: "/recommended-equipment" },
   { label: "Contact", href: "/contact" },
 ] as const;

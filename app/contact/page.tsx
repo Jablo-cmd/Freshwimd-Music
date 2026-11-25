@@ -12,7 +12,7 @@ import { MapEmbed } from "@/components/site/map-embed";
 import { BreadcrumbJsonLd } from "@/components/site/breadcrumb-json-ld";
 
 export const metadata = pageMetadata({
-  title: "Contact & WhatsApp Enquiries",
+  title: "Contact the Johannesburg Recording Studio",
   description:
     "Contact Fresh Wind Music, 60 Goud St, City and Suburban, Johannesburg. WhatsApp 063 122 6552 to enquire about albums, EPs, choirs and recording.",
   path: "/contact",

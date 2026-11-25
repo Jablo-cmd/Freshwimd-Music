@@ -7,7 +7,7 @@ import { site } from "@/content/site";
 import { services } from "@/content/services";
 import { whatsappUrl } from "@/lib/whatsapp";
 
-const interests = [...services.map((s) => s.title), "Recommended equipment", "Something else"];
+const interests = [...services.map((s) => s.title), "Something else"];
 const field = "mt-2 w-full rounded-sm border border-line bg-surface-soft px-4 py-3 text-cream placeholder:text-muted/70 focus:border-amber focus:outline-none";
 const label = "text-xs font-medium uppercase tracking-[0.14em] text-cream/80";
 
