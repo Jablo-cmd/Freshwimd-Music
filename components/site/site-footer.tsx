@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, MessageCircle, Phone, Globe } from "lucide-react";
 import { fullAddress, mainNav, mapsLink, site } from "@/content/site";
-import { services } from "@/content/services";
+import { getService } from "@/content/services";
+
+const footerServices = ["album-recording-production", "ep-recording-production", "choir-recording-south-africa", "school-choir-recording", "university-college-choir-recording", "church-choir-recording", "worship-team-recording", "gospel-recording-production", "jazz-recording-production", "single-song-recording", "mixing-mastering", "music-production", "music-education"];
 import { whatsappFor } from "@/lib/whatsapp";
 
 const linkClass = "text-muted transition-colors hover:text-amber";
@@ -32,13 +34,15 @@ export function SiteFooter() {
           <h2 className="eyebrow mb-5">Explore</h2>
           <ul className="space-y-3 text-sm">
             {mainNav.map((n) => (<li key={n.href}><Link href={n.href} className={linkClass}>{n.label}</Link></li>))}
+            <li><Link href="/resources" className={linkClass}>Guides &amp; Resources</Link></li>
           </ul>
         </nav>
 
         <nav aria-label="Services">
           <h2 className="eyebrow mb-5">Services</h2>
           <ul className="space-y-3 text-sm">
-            {services.map((s) => (<li key={s.slug}><Link href={s.href} className={linkClass}>{s.title}</Link></li>))}
+            {footerServices.map((slug) => { const s = getService(slug); return s ? (<li key={s.slug}><Link href={s.href} className={linkClass}>{s.title}</Link></li>) : null; })}
+            <li><Link href="/services" className={linkClass}>All services</Link></li>
           </ul>
         </nav>
 

@@ -16,8 +16,30 @@ interface Props {
   embedUrl?: string;
   audioUrl?: string;
   artwork?: string;
+  /** Initials shown in place of artwork when there is no picture */
+  monogram?: string;
+  /** CSS object-position for the artwork crop */
+  artworkPosition?: string;
   listenUrl?: string;
   className?: string;
+}
+
+function ArtworkSlot({ artwork, monogram, position }: { artwork?: string; monogram?: string; position?: string }) {
+  if (artwork) {
+    return (
+      <div className="relative size-16 shrink-0 overflow-hidden rounded-sm bg-surface">
+        <Image src={artwork} alt="" fill sizes="64px" className="object-cover" style={{ objectPosition: position ?? "50% 20%", transformOrigin: position ?? "50% 20%", transform: "scale(1.9)" }} />
+      </div>
+    );
+  }
+  if (monogram) {
+    return (
+      <div aria-hidden="true" className="display flex size-16 shrink-0 items-center justify-center rounded-sm border border-amber/20 bg-gradient-to-br from-surface to-ink-deep text-2xl tracking-wider text-amber/90">
+        {monogram}
+      </div>
+    );
+  }
+  return null;
 }
 
 const playButtonClass = "flex size-12 shrink-0 items-center justify-center rounded-full bg-amber text-ink transition-colors hover:bg-amber-soft";
@@ -29,7 +51,7 @@ const fmt = (s: number) => (Number.isFinite(s) ? `${Math.floor(s / 60)}:${String
  * Embeds load only after the visitor presses play (lighter pages, no third-party tracking until chosen),
  * and starting one track stops every other track on the page.
  */
-export function TrackPlayer({ id, title, subtitle, platform, embedUrl, audioUrl, artwork, listenUrl, className }: Props) {
+export function TrackPlayer({ id, title, subtitle, platform, embedUrl, audioUrl, artwork, monogram, artworkPosition, listenUrl, className }: Props) {
   const { activeId, setActive } = useActiveMedia();
   const embed = toEmbed(platform, embedUrl);
   const hosted = platform === "hosted" && !!audioUrl;
@@ -52,7 +74,7 @@ export function TrackPlayer({ id, title, subtitle, platform, embedUrl, audioUrl,
     return (
       <div className={cn("overflow-hidden rounded-sm border border-line bg-surface-soft", className)}>
         <div className="flex items-center gap-4 p-4">
-          {artwork && <div className="relative size-16 shrink-0 overflow-hidden rounded-sm bg-surface"><Image src={artwork} alt="" fill sizes="64px" className="object-cover" /></div>}
+          <ArtworkSlot artwork={artwork} monogram={monogram} position={artworkPosition} />
           <div className="min-w-0 flex-1">
             <p className="font-medium text-cream">{title}</p>
             {subtitle && <p className="truncate text-xs uppercase tracking-[0.14em] text-muted">{subtitle}</p>}
@@ -78,7 +100,7 @@ export function TrackPlayer({ id, title, subtitle, platform, embedUrl, audioUrl,
   return (
     <div className={cn("overflow-hidden rounded-sm border border-line bg-surface-soft", className)}>
       <div className="flex items-center gap-4 p-4">
-        {artwork && <div className="relative size-16 shrink-0 overflow-hidden rounded-sm bg-surface"><Image src={artwork} alt="" fill sizes="64px" className="object-cover" /></div>}
+        <ArtworkSlot artwork={artwork} monogram={monogram} position={artworkPosition} />
         <div className="min-w-0 flex-1">
           <p className="font-medium text-cream">{title}</p>
           <p className="truncate text-xs uppercase tracking-[0.14em] text-muted">{[subtitle, platformLabel[platform]].filter(Boolean).join(" · ")}</p>

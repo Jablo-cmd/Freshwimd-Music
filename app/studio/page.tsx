@@ -1,4 +1,7 @@
+import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
+import { mapsLink, site } from "@/content/site";
+import { buttonVariants } from "@/components/ui/button";
 import type { ImageKey } from "@/content/images";
 import { PageHero } from "@/components/site/page-hero";
 import { Section, SectionHeading } from "@/components/site/section";
@@ -6,11 +9,12 @@ import { SiteImage } from "@/components/site/site-image";
 import { Reveal } from "@/components/site/reveal";
 import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { CtaBand } from "@/components/site/cta-band";
+import { BreadcrumbJsonLd } from "@/components/site/breadcrumb-json-ld";
 
 export const metadata = pageMetadata({
-  title: "Studio & Equipment in Johannesburg",
+  title: "Recording Studio Johannesburg",
   description:
-    "Inside the Fresh Wind Music control room in Johannesburg: large-format mixing console, outboard processing and monitoring for recording, mixing and mastering.",
+    "Fresh Wind Music's recording studio in City and Suburban, Johannesburg: albums, EPs, choirs and single songs. Clients welcome from across South Africa.",
   path: "/studio",
 });
 
@@ -30,10 +34,11 @@ const details = [
 export default function StudioPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Studio & Equipment", path: "/studio" }]} />
       <PageHero
-        eyebrow="Studio & equipment"
-        title="The room where the sound is shaped."
-        text="A look inside the Fresh Wind Music control room — the console, processing and monitoring behind our production, recording, mixing and mastering work."
+        eyebrow="Recording studio · Johannesburg"
+        title="A recording studio in Johannesburg."
+        text="Fresh Wind Music records albums, EPs, choirs and single songs at our studio in Johannesburg. A look inside the control room — the console, processing and monitoring behind our recording, mixing and mastering work."
         image="controlRoomSession"
       >
         <WhatsAppButton topic="production" size="lg">Discuss Your Project</WhatsAppButton>
@@ -54,6 +59,31 @@ export default function StudioPage() {
         </div>
       </Section>
 
+      <Section>
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+          <div>
+            <SectionHeading eyebrow="Visit the studio" title="Where to find us" />
+            <address className="mt-6 not-italic leading-relaxed text-cream/90">
+              {site.name}<br />{site.address.street}<br />{site.address.suburb}<br />{site.address.city}, {site.address.postalCode}
+            </address>
+            <p className="mt-5 max-w-md leading-relaxed text-muted">Our recording studio is in Johannesburg. Please get in touch before visiting so we can arrange a time.</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href={mapsLink} target="_blank" rel="noopener noreferrer" className={buttonVariants({ variant: "outline" })}>Get directions<span className="sr-only"> (opens in a new tab)</span></a>
+              <WhatsAppButton topic="recordingProject">Discuss Your Recording Project</WhatsAppButton>
+            </div>
+          </div>
+          <div>
+            <SectionHeading eyebrow="Who records here" title="Clients from across South Africa" />
+            <p className="mt-6 leading-relaxed text-muted">The studio is in Johannesburg, and artists and groups from across South Africa are welcome to enquire. We record independent artists, choirs, churches, schools and universities, worship teams and bands.</p>
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+              {[["album-recording-production", "Album recording"], ["ep-recording-production", "EP recording"], ["choir-recording-south-africa", "Choir recording"], ["gospel-recording-production", "Gospel recording"], ["jazz-recording-production", "Jazz recording"], ["single-song-recording", "Single song recording"], ["mixing-mastering", "Mixing and mastering"], ["music-production", "Music production"]].map(([slug, label]) => (
+                <li key={slug}><Link href={`/services/${slug}`} className="text-amber underline underline-offset-4 hover:text-amber-soft">{label}</Link></li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Section>
+
       <Section tone="soft">
         <SectionHeading eyebrow="In the control room" title="What you can see in the photographs" />
         <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -66,7 +96,7 @@ export default function StudioPage() {
         </ul>
         <p className="mt-10 max-w-3xl text-sm leading-relaxed text-muted">The equipment and facilities used on a project depend on its requirements and are confirmed with you when you enquire. Photography of the live room, keyboards and instruments will be added to this page.</p>
       </Section>
-      <CtaBand topic="production" title="Ready to step into the room?" text="Tell us about your project on WhatsApp and we will discuss how we can work together." label="Discuss Your Project" />
+      <CtaBand topic="recordingProject" title="Ready to step into the room?" text="Tell us about your project on WhatsApp and we will discuss how we can work together." label="Discuss Your Recording Project" />
     </>
   );
 }

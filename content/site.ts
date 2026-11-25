@@ -4,7 +4,7 @@ export const site = {
   tagline: "Where Music Finds Its Voice.",
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://freshwindmusic.co.za").replace(/\/$/, ""),
   description:
-    "Fresh Wind Music is a Johannesburg-based music production, audio engineering, songwriting, artist development and music education business.",
+    "Fresh Wind Music is a recording and music production studio in Johannesburg, South Africa, recording albums, EPs, choirs and single songs for artists, churches, schools and universities, and teaching music.",
   phone: { display: "063 122 6552", href: "tel:+27631226552", e164: "+27631226552" },
   whatsappNumber: "27631226552",
   email: "freshwindmusic@aurisnexus.co.za",
