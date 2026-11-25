@@ -16,7 +16,7 @@ concurrency:
 
 env:
   # Address the site is served from. Canonical URLs, sitemap and structured data use it.
-  # Switch to https://freshwindmusic.co.za by setting a repository variable SITE_URL when that domain is pointed here.
+  # Switch domain only by setting the repository variable SITE_URL when a new domain is actually pointed here (docs/DOMAIN_SWITCH.md).
   SITE_URL: ${{ vars.SITE_URL || 'https://freshwindmusic.aurisnexus.co.za' }}
 
 jobs:
@@ -31,6 +31,11 @@ jobs:
       - run: npm ci
       - run: npm run typecheck && npm run lint
       - name: Build static site
+        env:
+          # Optional search-engine integration values; empty unless set as repository variables (docs/SEARCH_CONSOLE_SETUP.md)
+          NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
+          NEXT_PUBLIC_BING_SITE_VERIFICATION: ${{ vars.BING_SITE_VERIFICATION }}
+          NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID }}
         run: NEXT_PUBLIC_SITE_URL="$SITE_URL" npm run build:static
       - name: Pages files (custom domain, no Jekyll)
         run: |

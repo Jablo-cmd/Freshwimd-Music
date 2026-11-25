@@ -1,6 +1,6 @@
 # Fresh Wind Music — SEO strategy
 
-Status: prepared 23 Nov 2026 for owner review. **Not deployed.** The site is served from `https://freshwindmusic.aurisnexus.co.za`
+Status: updated 25 Nov 2026 for owner review (first version 23 Nov). **Not deployed.** The site is served from `https://freshwindmusic.aurisnexus.co.za`
 and every canonical URL, sitemap entry and structured-data URL in the build uses that origin.
 
 **Positioning.** An inclusive recording and music production studio in Johannesburg. Commercial priority: full albums and EPs.
@@ -32,7 +32,7 @@ Each page targets one primary intent; related phrases are used naturally in head
 | Praise & worship team recording | national, church music depts | `/services/worship-team-recording/` | same guide |
 | Gospel recording / production | national, genre | `/services/gospel-recording-production/` | `/artists/` (proof of gospel music on site) |
 | Jazz recording / production | national, genre | `/services/jazz-recording-production/` | — |
-| Single song, demo, vocal recording (Tier 3) | national + local, entry-level | `/services/single-song-recording/` | guide `prepare-for-a-recording-session` |
+| Vocal recording, singer / independent-artist recording, single song, demo (Tier 2–3) | national + local, entry-level | `/services/single-song-recording/` (vocal recording is a section of this page; a separate vocal page would repeat it) | guide `prepare-for-a-recording-session` ("How Independent Artists Can Prepare for Studio Recording") |
 | Mixing & mastering | national | `/services/mixing-mastering/` | guide `mixing-vs-mastering` |
 | Music production | national | `/services/music-production/` | songwriting, artist development |
 | Music lessons (secondary business) | local | `/music-lessons/` | — |
@@ -93,3 +93,26 @@ Podcast and advert pages drafted earlier were dropped: outside the brief's tiers
 - Revisit R&B / amapiano / hip-hop / afro-soul pages only when there is real work to show.
 
 ## 9. Domain change (freshwindmusic.co.za or .com): see `docs/DOMAIN_SWITCH.md`.
+
+## 10. SEO audit and implementation (25 Nov 2026)
+Domain: `https://freshwindmusic.aurisnexus.co.za` is the only production origin. The code default, `.env.example`, README and CI now agree on it; the
+`freshwindmusic.co.za` / `.com` references that remain are in `docs/DOMAIN_SWITCH.md` and `docs/SEO_STRATEGY.md` as *future* migration notes only.
+Verify any build with `npm run build:static && npm run seo:audit` (it fails if another freshwindmusic domain appears, if any canonical, hreflang, og:url,
+sitemap or JSON-LD URL is off-origin or lacks a trailing slash, if lastmod values are all identical/"today", or if any page lacks required metadata).
+
+## 11. Keyword coverage (no volumes measured — see §1)
+| Group | Targeted now by | Gap / future content |
+|---|---|---|
+| Recording studio South Africa (general, professional, music production studio) | home, `/services/`, `/studio/`, `/services/music-production/` | case studies once real projects exist |
+| Album & EP recording (incl. gospel / jazz album & EP, independent artist) | album, EP, gospel, jazz pages; guides: how to record an album, EP vs album vs single, first-EP guide | portfolio entries per album/EP |
+| Choir recording (school, university, church, gospel choir, choir album/music production) | choir hub + school, university/college, church pages; guides: how choir recording works, prepare a choir, school guide, university guide | live-choir recording is **not** targeted: not a confirmed service |
+| Church & worship (church music/album recording, praise & worship team, Christian music, worship album) | church choir, worship-team and gospel pages; church & worship album guide | a dedicated "recording a praise and worship team" guide (see §12) |
+| Independent artists / singers / vocal recording | single-song & vocal page (vocal-recording section, independent-artist FAQ); "How Independent Artists Can Prepare for Studio Recording" | — |
+| Jazz recording / production, instrumental recording, music arrangement | jazz page; instrument recording on the single-song page; arrangement on the music-production page | an arrangement-focused page only if it can be written from real service details |
+| Mixing & mastering (album, EP, gospel, choir) | `/services/mixing-mastering/`, guide mixing vs mastering | — |
+| Geography: Johannesburg, Gauteng, South Africa | studio page, contact, footer, LocalBusiness `areaServed` | no city pages (Johannesburg is the only studio) |
+
+## 12. Proposed content (not published — needs facts or real projects)
+Recording a praise and worship team (distinct from the combined church guide); What to expect on recording day; How long does an album take to record
+(needs real turnaround data); Choosing a recording studio; Case studies for each completed album/EP/choir project (needs permission and verified credits);
+Gospel album production for independent artists. Do not publish these until the facts exist.

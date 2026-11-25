@@ -1,7 +1,7 @@
 # Fresh Wind Music — website
 
 Premium website for **Fresh Wind Music**, a Johannesburg music production, audio engineering, songwriting,
-artist development and music education business. Canonical domain: <https://freshwindmusic.co.za>.
+artist development and music education business. Current production domain: <https://freshwindmusic.aurisnexus.co.za> (a standalone domain may follow; see `docs/DOMAIN_SWITCH.md`).
 
 Stack: Next.js 16 (App Router) · TypeScript · Tailwind CSS 4 · shadcn/ui-style components (Radix) · Framer Motion · Lucide.
 No backend or database is required; content is typed local data (see `docs/CONTENT_GUIDE.md`).
@@ -38,23 +38,23 @@ One-time setup:
 2. Same page → **Custom domain**: `freshwindmusic.aurisnexus.co.za`. Tick **Enforce HTTPS** once the certificate is issued.
 3. DNS for `aurisnexus.co.za`: add `CNAME  freshwindmusic  →  jablo-cmd.github.io` (no trailing path; wait for propagation).
 4. Merge to `main` (or run the workflow manually from the **Actions** tab).
-Canonical URLs use `https://freshwindmusic.aurisnexus.co.za`. To move to `freshwindmusic.co.za` later, set the repository
+Canonical URLs use `https://freshwindmusic.aurisnexus.co.za`. To move to a standalone domain later, set the repository
 variable `SITE_URL` and the Pages custom domain.
 
 ## Deploy to shared hosting (cPanel / FTP) — static export
 The whole site is static, so it runs on ordinary web hosting with no Node.js:
 ```bash
-NEXT_PUBLIC_SITE_URL=https://freshwindmusic.co.za npm run build:static   # writes out/ (+ .htaccess)
+npm run build:static   # writes out/ (+ .htaccess); uses the current production domain unless NEXT_PUBLIC_SITE_URL is set
 ```
 Upload the **contents** of `out/` (including the hidden `.htaccess`) to the domain's web root (`public_html`), or
 unzip a prebuilt `freshwindmusic-site.zip` there. `deploy/.htaccess` forces HTTPS (install the SSL certificate first),
 redirects www to the apex domain and sets caching/security headers. Re-run the build and re-upload whenever content changes.
 Static hosting skips Next's runtime image optimisation; images are served as the optimised crops in `public/images/site/`.
 
-## Deploy to freshwindmusic.co.za (Vercel alternative)
+## Alternative host (Vercel) — only if the site moves
 1. Import the GitHub repo into Vercel (framework preset: Next.js, defaults are correct).
-2. Set `NEXT_PUBLIC_SITE_URL=https://freshwindmusic.co.za`. Do **not** set `FWM_SAMPLE_CONTENT`.
-3. Project → Domains: add `freshwindmusic.co.za` and `www.freshwindmusic.co.za` (redirect www → apex).
+2. Set `NEXT_PUBLIC_SITE_URL` to the domain the site will be served from. Do **not** set `FWM_SAMPLE_CONTENT`.
+3. Project → Domains: add the production domain (and redirect `www` to it).
 4. At the `.co.za` registrar/DNS: `A  @  76.76.21.21` and `CNAME www cname.vercel-dns.com` (or the values Vercel shows).
 5. After DNS propagates verify HTTPS, `/sitemap.xml` and `/robots.txt`, then submit the sitemap in Google Search Console
    and claim the Google Business Profile for 60 Goud St.

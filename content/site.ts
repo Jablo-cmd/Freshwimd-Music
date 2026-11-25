@@ -2,7 +2,11 @@
 export const site = {
   name: "Fresh Wind Music",
   tagline: "Where Music Finds Its Voice.",
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://freshwindmusic.co.za").replace(/\/$/, ""),
+  /**
+   * Canonical production origin. Defaults to the current production domain so that ANY build (local, CI, preview) is
+   * consistent; set NEXT_PUBLIC_SITE_URL only when the site actually moves to another domain (see docs/DOMAIN_SWITCH.md).
+   */
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://freshwindmusic.aurisnexus.co.za").replace(/\/$/, ""),
   description:
     "Fresh Wind Music is a recording and music production studio in Johannesburg, South Africa, recording albums, EPs, choirs and single songs for artists, churches, schools and universities, and teaching music.",
   phone: { display: "063 122 6552", href: "tel:+27631226552", e164: "+27631226552" },

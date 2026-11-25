@@ -31,3 +31,8 @@ when both DNS records exist.
 - `app/robots.ts`, `app/sitemap.ts`, `lib/seo.ts` (canonical / Open Graph), `lib/schema.ts` and the breadcrumb/service/article JSON-LD all use `site.url`.
 - `.github/workflows/deploy.yml` → `SITE_URL` (repository variable, default `https://freshwindmusic.aurisnexus.co.za`) drives the build and the `CNAME` file.
 - `scripts/seo-audit.mjs` (`npm run seo:audit`) verifies canonicals, sitemap, robots, titles, descriptions, JSON-LD and that no other domain leaks into the output.
+
+## After a domain move
+- Delete the redirect stub `app/services/audio-engineering/page.tsx` only if you no longer want the old rename to resolve; if the host changes, add equivalent stubs on the new site for any
+  URLs you want to keep alive, and keep the old-host 301 at the DNS/hosting level.
+- Update `content/lastmod.ts` is **not** needed for a domain change; lastmod values describe content, not hosting.
