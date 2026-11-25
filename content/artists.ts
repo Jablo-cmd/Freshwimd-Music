@@ -13,4 +13,5 @@ export const artists: Artist[] = [
   { id: "monde-mgquba", name: "Monde Mgquba", slug: "monde-mgquba", profileImage: "/images/artists/monde-mgquba.jpg", profileImageAlt: "Monde Mgquba in a black suit singing into a microphone", profileImagePosition: "50% 15%", featuredTrackId: "monde-mgquba-if-not-for-you", featured: true, published: true },
   { id: "exaltation-crew", name: "Exaltation Crew", slug: "exaltation-crew", featuredTrackId: "exaltation-crew-you-are", featured: true, published: true },
   { id: "refilwe-tjatji", name: "Refilwe Tjatji", slug: "refilwe-tjatji", profileImage: "/images/artists/refilwe-tjatji.jpg", profileImageAlt: "Refilwe Tjatji in a mustard-yellow coat", profileImagePosition: "50% 25%", featuredTrackId: "refilwe-tjatji-full-of-faith", featured: true, published: true },
+  { id: "godson-zek", name: "Godson Zek", slug: "godson-zek", profileImage: "/images/artists/godson-zek.jpg", profileImageAlt: "Godson Zek smiling in a dark green suit with his hands together", profileImagePosition: "50% 20%", featuredTrackId: "godson-zek-it-is-yours", featured: true, published: true },
 ];

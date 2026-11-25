@@ -15,4 +15,5 @@ export const tracks: Track[] = [
   song("monde-mgquba-if-not-for-you", "monde-mgquba", "If Not for You", { embedUrl: "https://youtu.be/fKrQSv3ZEL0", listenUrl: "https://youtu.be/fKrQSv3ZEL0" }),
   song("exaltation-crew-you-are", "exaltation-crew", "You Are", { embedUrl: "https://youtu.be/oiNhJH04Pj0", listenUrl: "https://youtu.be/oiNhJH04Pj0" }),
   song("refilwe-tjatji-full-of-faith", "refilwe-tjatji", "Full of Faith (Live)", { embedUrl: "https://youtu.be/GJZEkhPYxds", listenUrl: "https://youtu.be/GJZEkhPYxds" }),
+  song("godson-zek-it-is-yours", "godson-zek", "It Is Yours", { embedUrl: "https://youtu.be/y7UDPku_NuY", listenUrl: "https://youtu.be/y7UDPku_NuY" }),
 ];
