@@ -30,8 +30,8 @@ Policy: **YouTube first** — each song was searched on YouTube before any other
 | Exaltation Crew | You Are | `https://youtu.be/POnrX2EGcYE` (embed + link) | Link replaced by the owner on 25 Nov 2026 (previously `oiNhJH04Pj0`; song title and album details not re-confirmed). **Not opened/verified.** No independent source for this album was found. |
 | Godson Zek | It Is Yours | `https://youtu.be/y7UDPku_NuY` (embed + link) | Supplied by the owner. **Not opened/verified** from the build environment. No biography, album, date or credit information was supplied, so none is shown. |
 | Refilwe Tjatji | Full of Faith (Live) | `https://youtu.be/GJZEkhPYxds` (embed + link) | Supplied by the owner. **Not opened/verified.** |
-| Tsholo Acts | Holy Spirit | `https://youtu.be/IQGOs8TWxq8` (embed + link) | Supplied by the owner (26 Nov 2026). **Not opened/verified.** No photograph supplied yet: a branded monogram placeholder is shown until one is provided. No biography or links. |
-| Mlungu Mkhonza | Wavuk' e Calvary | `https://youtu.be/8DR5MzPoO14` (embed + link) | Supplied by the owner (26 Nov 2026). **Not opened/verified.** No photograph supplied yet: a branded monogram placeholder is shown until one is provided. No biography or links. |
+| Tsholo Acts | Holy Spirit | `https://youtu.be/IQGOs8TWxq8` (embed + link) | Supplied by the owner (26 Nov 2026). **Not opened/verified.** Photograph supplied by the owner (26 Nov 2026), cropped to the artist (stage shot, centred on the singer). No biography or links. |
+| Mlungu Mkhonza | Wavuk' e Calvary | `https://youtu.be/8DR5MzPoO14` (embed + link) | Supplied by the owner (26 Nov 2026). **Not opened/verified.** Photograph supplied by the owner (26 Nov 2026), cropped from song-cover artwork to the artist only (text removed). No biography or links. |
 
 Embeds use `youtube-nocookie.com`, load only after the visitor presses play, and play from the uploader's own video. Nothing
 is downloaded or hosted. Ownership/permission to feature these artists has not been confirmed with them.
