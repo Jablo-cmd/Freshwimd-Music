@@ -16,4 +16,6 @@ export const tracks: Track[] = [
   song("exaltation-crew-you-are", "exaltation-crew", "You Are", { embedUrl: "https://youtu.be/POnrX2EGcYE", listenUrl: "https://youtu.be/POnrX2EGcYE" }),
   song("refilwe-tjatji-full-of-faith", "refilwe-tjatji", "Full of Faith (Live)", { embedUrl: "https://youtu.be/GJZEkhPYxds", listenUrl: "https://youtu.be/GJZEkhPYxds" }),
   song("godson-zek-it-is-yours", "godson-zek", "It Is Yours", { embedUrl: "https://youtu.be/y7UDPku_NuY", listenUrl: "https://youtu.be/y7UDPku_NuY" }),
+  song("tsholo-acts-holy-spirit", "tsholo-acts", "Holy Spirit", { embedUrl: "https://youtu.be/IQGOs8TWxq8", listenUrl: "https://youtu.be/IQGOs8TWxq8" }),
+  song("mlungu-mkhonza-wavuk-e-calvary", "mlungu-mkhonza", "Wavuk' e Calvary", { embedUrl: "https://youtu.be/8DR5MzPoO14", listenUrl: "https://youtu.be/8DR5MzPoO14" }),
 ];

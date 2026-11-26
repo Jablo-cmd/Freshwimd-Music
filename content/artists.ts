@@ -14,4 +14,6 @@ export const artists: Artist[] = [
   { id: "exaltation-crew", name: "Exaltation Crew", slug: "exaltation-crew", profileImage: "/images/artists/exaltation-crew.jpg", profileImageAlt: "Members of Exaltation Crew singing at microphones on stage in matching orange, red and brown African-print outfits", profileImagePosition: "50% 30%", featuredTrackId: "exaltation-crew-you-are", featured: true, published: true },
   { id: "refilwe-tjatji", name: "Refilwe Tjatji", slug: "refilwe-tjatji", profileImage: "/images/artists/refilwe-tjatji.jpg", profileImageAlt: "Refilwe Tjatji in a mustard-yellow coat", profileImagePosition: "50% 25%", featuredTrackId: "refilwe-tjatji-full-of-faith", featured: true, published: true },
   { id: "godson-zek", name: "Godson Zek", slug: "godson-zek", profileImage: "/images/artists/godson-zek.jpg", profileImageAlt: "Godson Zek smiling in a dark green suit with his hands together", profileImagePosition: "50% 20%", featuredTrackId: "godson-zek-it-is-yours", featured: true, published: true },
+  { id: "tsholo-acts", name: "Tsholo Acts", slug: "tsholo-acts", featuredTrackId: "tsholo-acts-holy-spirit", featured: true, published: true },
+  { id: "mlungu-mkhonza", name: "Mlungu Mkhonza", slug: "mlungu-mkhonza", featuredTrackId: "mlungu-mkhonza-wavuk-e-calvary", featured: true, published: true },
 ];
